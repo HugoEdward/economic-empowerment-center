@@ -1,13 +1,16 @@
 import './globals.css';
+import AdvisorPreviewGate from '@/components/AdvisorPreviewGate';
+import FeedbackButton from '@/components/FeedbackButton';
 
 export const metadata = {
   title: { default: 'Economic Empowerment — Global Economic Ecosystem', template: '%s | Economic Empowerment' },
-  description: 'A global economic ecosystem connecting organizations, merchants, professionals, and members across 190+ nations.',
+  description: 'A global economic ecosystem connecting organizations, merchants, professionals, and members across 195+ countries and territories.',
 };
 
 const NAV = [
   { href: '/', label: 'Home' },
   { href: '/organizations/', label: 'Organizations' },
+  { href: '/city-venture-vip/', label: 'City Venture' },
   { href: '/feasibility-and-roi/', label: 'Feasibility' },
   { href: '/how-do-i-start-today/', label: 'How to Start' },
   { href: '/apply/', label: 'Applications' },
@@ -17,20 +20,22 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="min-h-screen flex flex-col">
-        <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-2xl bg-navy-950/80 border-b border-surface-border">
-          <div className="max-w-7xl mx-auto px-5 h-14 flex items-center justify-between">
-            <a href="/" className="font-display text-lg font-semibold tracking-tight text-surface-primary no-underline">
-              Economic<span className="text-gold ml-1">Empowerment</span>
-            </a>
-            <div className="hidden md:flex items-center gap-5">
-              {NAV.map(l => (
-                <a key={l.href} href={l.href} className="text-[13px] font-medium text-surface-secondary no-underline hover:text-surface-primary transition-colors">{l.label}</a>
-              ))}
-              <a href="/apply/" className="btn-primary !py-1.5 !px-4 !text-xs">Apply for Consideration</a>
+        <AdvisorPreviewGate>
+          <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-2xl bg-navy-950/80 border-b border-surface-border">
+            <div className="max-w-7xl mx-auto px-5 h-14 flex items-center justify-between">
+              <a href="/" className="font-display text-lg font-semibold tracking-tight text-surface-primary no-underline">
+                Economic<span className="text-gold ml-1">Empowerment</span>
+              </a>
+              <div className="hidden md:flex items-center gap-5">
+                {NAV.map(l => (
+                  <a key={l.href} href={l.href} className="text-[13px] font-medium text-surface-secondary no-underline hover:text-surface-primary transition-colors">{l.label}</a>
+                ))}
+                <a href="/apply/" className="btn-primary !py-1.5 !px-4 !text-xs">Apply for Consideration</a>
+              </div>
             </div>
-          </div>
-        </nav>
-        <main className="flex-1">{children}</main>
+          </nav>
+          <main className="flex-1">{children}</main>
+          <FeedbackButton />
         <footer className="border-t border-surface-border">
           <div className="bg-navy-900 py-8 px-5">
             <div className="max-w-3xl mx-auto text-center space-y-3">
@@ -64,6 +69,7 @@ export default function RootLayout({ children }) {
             </div>
           </div>
         </footer>
+        </AdvisorPreviewGate>
       </body>
     </html>
   );
