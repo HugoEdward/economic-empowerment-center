@@ -31,7 +31,18 @@ export default function AdvisorPreviewGate({ children }) {
   }
 
   if (checking) return null;
-  if (unlocked) return children;
+  if (unlocked) return (
+    <>
+      {children}
+      {/* Advisor Preview Notice — persistent badge bottom-left */}
+      <div className="fixed bottom-5 left-5 z-40 bg-gold/[0.12] backdrop-blur-md border border-gold/30 rounded-full px-3 py-1.5 shadow-lg flex items-center gap-2">
+        <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
+        <p className="text-[9px] font-bold tracking-wider uppercase text-gold leading-none">
+          Advisor Preview <span className="text-gold/60 mx-1">·</span> Not Yet Released For Public Use
+        </p>
+      </div>
+    </>
+  );
 
   return (
     <div className="fixed inset-0 z-[100] bg-navy-950 overflow-y-auto">

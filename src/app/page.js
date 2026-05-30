@@ -19,11 +19,11 @@ export default function Home() {
               is already organized.
             </h1>
             <p className="text-lg text-surface-secondary leading-relaxed mb-8 max-w-2xl mx-auto">
-              Hundreds of millions of people already belong to organizations.
+              Hundreds of millions of people are organized.
               Millions of businesses already serve them.
               The structure exists. The relationships exist. The trust exists.
               <br/>
-              <span className="text-surface-primary font-medium">It has simply never been connected.</span>
+              <span className="text-surface-primary font-medium">ECONOMIC EMPOWERMENT CENTER brings them together, strengthening mutual SUSTAINABLE DEVELOPMENT.</span>
             </p>
             <div className="flex flex-wrap justify-center gap-3 mb-10">
               <a href="#what" className="btn-gold">Show Me the Gold Pot</a>
