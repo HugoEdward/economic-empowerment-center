@@ -10,8 +10,8 @@ export const metadata = {
 const NAV = [
   { href: '/', label: 'Home' },
   { href: '/organizations/', label: 'Organizations' },
+  { href: '/international-cultures-celebration/', label: 'Cultures Celebration' },
   { href: '/city-venture-vip/', label: 'City Venture' },
-  { href: '/feasibility-and-roi/', label: 'Feasibility' },
   { href: '/how-do-i-start-today/', label: 'How to Start' },
   { href: '/apply/', label: 'Applications' },
 ];
@@ -37,6 +37,34 @@ export default function RootLayout({ children }) {
           <main className="flex-1">{children}</main>
           <FeedbackButton />
         <footer className="border-t border-surface-border">
+          {/* Ecosystem links */}
+          <div className="bg-navy-900 py-8 px-5 border-b border-surface-border/50">
+            <div className="max-w-5xl mx-auto">
+              <p className="text-[10px] font-bold tracking-widest uppercase text-gold text-center mb-5">The MUNDUS Ecosystem</p>
+              <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+                <a href="/" className="text-center bg-navy-800 border border-gold/20 rounded-xl px-3 py-3 hover:border-gold/40 transition-colors no-underline">
+                  <p className="font-mono text-[10px] text-gold mb-1">EconomicEmpowerment.Center</p>
+                  <p className="text-[9px] text-surface-muted leading-snug">Economic Empowerment system</p>
+                </a>
+                <a href="https://culturescelebration.com" target="_blank" rel="noopener noreferrer" className="text-center bg-navy-800 border border-surface-border rounded-xl px-3 py-3 hover:border-gold/30 transition-colors no-underline">
+                  <p className="font-mono text-[10px] text-gold mb-1">CulturesCelebration.com ↗</p>
+                  <p className="text-[9px] text-surface-muted leading-snug">Cultural & public engagement</p>
+                </a>
+                <a href="https://munduspass.com" target="_blank" rel="noopener noreferrer" className="text-center bg-navy-800 border border-surface-border rounded-xl px-3 py-3 hover:border-gold/30 transition-colors no-underline">
+                  <p className="font-mono text-[10px] text-gold mb-1">MundusPASS ↗</p>
+                  <p className="text-[9px] text-surface-muted leading-snug">Benefits & transaction infrastructure</p>
+                </a>
+                <a href="/city-venture-vip/" className="text-center bg-navy-800 border border-surface-border rounded-xl px-3 py-3 hover:border-gold/30 transition-colors no-underline">
+                  <p className="font-mono text-[10px] text-gold mb-1">1City.VIP</p>
+                  <p className="text-[9px] text-surface-muted leading-snug">City business & hospitality activation</p>
+                </a>
+                <a href="https://culturescelebration.com" target="_blank" rel="noopener noreferrer" className="text-center bg-navy-800 border border-surface-border rounded-xl px-3 py-3 hover:border-gold/30 transition-colors no-underline">
+                  <p className="font-mono text-[10px] text-gold mb-1">Passport to the World ↗</p>
+                  <p className="text-[9px] text-surface-muted leading-snug">Visitor & pavilion participation</p>
+                </a>
+              </div>
+            </div>
+          </div>
           <div className="bg-navy-900 py-8 px-5">
             <div className="max-w-3xl mx-auto text-center space-y-3">
               <p className="text-xs text-surface-secondary leading-relaxed">

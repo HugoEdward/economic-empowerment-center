@@ -131,6 +131,37 @@ export default function Home() {
         </div>
       </section>
 
+      {/* THE ECOSYSTEM */}
+      <section className="py-16 px-5 bg-navy-900">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-10">
+            <p className="section-label justify-center">The Ecosystem</p>
+            <h2 className="font-display text-2xl md:text-3xl font-medium tracking-tight mb-3">
+              Separate platforms. <em className="text-gold italic">Connected purpose.</em>
+            </h2>
+            <p className="text-sm text-surface-secondary max-w-2xl mx-auto">
+              Economic Empowerment is the sustainability engine. Culture, city activation, transactions, and visitor
+              participation each have a dedicated platform — all working together.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-6">
+            <EcoCard tag="You Are Here" name="EconomicEmpowerment.Center" desc="Economic empowerment system for organizations, entrepreneurs, merchants, professionals, chambers, and sponsors." href="/" here />
+            <EcoCard tag="Cultural Engine" name="CulturesCelebration.com" desc="Cultural participation and public engagement ecosystem — where the work of Economic Empowerment becomes visible." href="https://culturescelebration.com" external />
+            <EcoCard tag="Transaction Layer" name="MundusPASS" desc="Benefits, participation, and transaction infrastructure supporting the entire ecosystem." href="https://munduspass.com" external />
+            <EcoCard tag="City Activation" name="1City.VIP" desc="City business, tourism, merchant, and hospitality activation aligned with cultural programming." href="/city-venture-vip/" />
+            <EcoCard tag="Visitor System" name="Passport to the World" desc="Visitor participation and pavilion activation system across participating nations." href="https://culturescelebration.com" external />
+            <EcoCard tag="Activation Pathway" name="International Cultures Celebration" desc="Year-round ecosystem creating opportunities from culture to economic empowerment." href="/international-cultures-celebration/" highlight />
+          </div>
+
+          <div className="text-center">
+            <a href="/international-cultures-celebration/" className="text-[11px] text-gold no-underline hover:underline">
+              See How They Work Together →
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* CITY VENTURE VIP TEASER */}
       <section className="py-16 px-5 bg-navy-900">
         <div className="max-w-4xl mx-auto text-center">
@@ -209,5 +240,20 @@ function Audience({ tag, punchline, body, cta, href, highlight }) {
       <p className="text-[12px] text-surface-secondary leading-relaxed mb-4">{body}</p>
       <a href={href} className="text-[11px] text-gold no-underline hover:underline">{cta} →</a>
     </div>
+  );
+}
+
+function EcoCard({ tag, name, desc, href, external, here, highlight }) {
+  const isExt = external;
+  return (
+    <a href={href} target={isExt ? '_blank' : undefined} rel={isExt ? 'noopener noreferrer' : undefined}
+      className={`block bg-navy-800 border rounded-2xl p-5 transition-all no-underline relative overflow-hidden ${here || highlight ? 'border-gold/30' : 'border-surface-border hover:border-gold/20'}`}>
+      {(here || highlight) && <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-gold to-transparent" />}
+      <p className="text-[9px] font-bold tracking-widest uppercase text-gold/70 mb-1.5">{tag}</p>
+      <p className={`font-mono text-[12px] mb-2 ${here || highlight ? 'text-gold' : 'text-surface-primary'}`}>
+        {name}{isExt && <span className="text-gold/60 ml-1">↗</span>}
+      </p>
+      <p className="text-[11px] text-surface-secondary leading-relaxed">{desc}</p>
+    </a>
   );
 }
