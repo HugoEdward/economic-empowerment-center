@@ -1,8 +1,3 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  output: 'export',
-  trailingSlash: true,
-  images: { unoptimized: true },
-};
-
-module.exports = nextConfig;
+import SimulatorView from './SimulatorView';
+export const metadata = { title:'Success Liaison — How Do I Reach $120,000+?', description:'Interactive simulator. Help organizations succeed and grow through Success Liaison participation.' };
+export default function Page() { return <SimulatorView />; }
