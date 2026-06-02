@@ -2,6 +2,7 @@
 import OpportunitySimulator, { formatCurrency, formatNumber } from '@/components/OpportunitySimulator';
 import RoleSection from '@/components/RoleSection';
 import ExampleExplainer from '@/components/ExampleExplainer';
+import WhatMustIDo from '@/components/WhatMustIDo';
 
 const INPUTS = [
   { name:'states', label:'Active States / Provinces', min:1, max:50, step:1, default:5, unit:'states' },
@@ -50,9 +51,30 @@ function calculate(v) {
 export default function SimulatorView() {
   return (
     <>
-      <section className="pt-20 pb-8 px-5">
+      <WhatMustIDo
+        subtitle="National Coordinator Example"
+        actions={[
+          'Activate 5 states/provinces and 25 cities country-wide',
+          'Mentor 5 State Coordinators and the full coordinator network',
+          'Coordinate 1,250 organizations and 1,250 Development Officers',
+          'Support 125 Success Liaisons and 25 City Coordinators',
+          'Help reach approximately 1.25 million national members',
+          'Build national sponsor and partnership relationships',
+          'Organize national annual events',
+          'Engage national chambers, government, and trade partners',
+          'Activate national Passport and 1City.VIP expansion',
+          'Focus on country-wide federation and scale',
+        ]}
+        represents={[
+          '5 States',
+          '25 Cities',
+          '1,250 Organizations',
+          '1 National Coordinator',
+        ]}
+        pathway="Illustrative pathway near $1,000,000+"
+      />
+      <section className="pt-4 pb-8 px-5">
         <div className="max-w-4xl mx-auto">
-          <p className="section-label justify-center mb-3">National Coordinator</p>
           <OpportunitySimulator target={1000000} inputs={INPUTS} calculate={calculate} />
         </div>
       </section>

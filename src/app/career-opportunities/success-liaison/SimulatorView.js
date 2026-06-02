@@ -2,6 +2,7 @@
 import OpportunitySimulator, { formatCurrency, formatNumber } from '@/components/OpportunitySimulator';
 import RoleSection from '@/components/RoleSection';
 import ExampleExplainer from '@/components/ExampleExplainer';
+import WhatMustIDo from '@/components/WhatMustIDo';
 
 const INPUTS = [
   { name:'orgs', label:'Organizations in Portfolio', min:1, max:25, step:1, default:10, unit:'orgs', hint:'10 orgs = 10 Development Officers supported' },
@@ -40,9 +41,30 @@ function calculate(v) {
 export default function SimulatorView() {
   return (
     <>
-      <section className="pt-20 pb-8 px-5">
+      <WhatMustIDo
+        subtitle="Success Liaison Example"
+        actions={[
+          'Support a portfolio of 10 active Member Organizations',
+          'Coordinate with 10 Development Officers across the portfolio',
+          'Help maintain approximately 10,000 active members across the portfolio',
+          'Help sustain approximately 500 participating merchants',
+          'Drive strong member retention (80%+) through ongoing support',
+          'Conduct quarterly engagement reviews with each organization',
+          'Help organizations sustain MundusPASS participation',
+          'Coordinate Passport to the World and 1City.VIP engagement',
+          'Support compliance with S.E.E.D. program requirements',
+          'Focus on retention, sustainability, and portfolio-wide growth',
+        ]}
+        represents={[
+          '10 Organizations',
+          '10 Development Officers',
+          '10,000 Members',
+          '1 Success Liaison',
+        ]}
+        pathway="Illustrative pathway near $120,000+"
+      />
+      <section className="pt-4 pb-8 px-5">
         <div className="max-w-4xl mx-auto">
-          <p className="section-label justify-center mb-3">Success Liaison</p>
           <OpportunitySimulator target={120000} inputs={INPUTS} calculate={calculate} />
         </div>
       </section>

@@ -2,6 +2,7 @@
 import OpportunitySimulator, { formatCurrency, formatNumber } from '@/components/OpportunitySimulator';
 import RoleSection from '@/components/RoleSection';
 import ExampleExplainer from '@/components/ExampleExplainer';
+import WhatMustIDo from '@/components/WhatMustIDo';
 
 const INPUTS = [
   { name:'organizations', label:'Organizations Managed', min:1, max:10, step:1, default:1, unit:'orgs', hint:'1 fully activated organization = full pathway' },
@@ -47,9 +48,30 @@ function calculate(v) {
 export default function SimulatorView() {
   return (
     <>
-      <section className="pt-20 pb-8 px-5">
+      <WhatMustIDo
+        subtitle="Development Officer Example"
+        actions={[
+          'Support 1 active Member Organization',
+          'Help maintain approximately 1,000 active members',
+          'Help activate approximately 50 participating merchants and professionals',
+          'Help increase member participation and retention',
+          'Help activate MundusPASS participation',
+          'Help support Passport to the World participation',
+          'Help support 1City.VIP participation',
+          'Help develop sponsorship opportunities',
+          'Help build sustainable economic activity',
+          'Focus on activation, retention, participation, and service',
+        ]}
+        represents={[
+          '1 Organization',
+          '1 Development Officer',
+          '1,000 Members',
+          '50 Merchants',
+        ]}
+        pathway="Illustrative pathway near $120,000+"
+      />
+      <section className="pt-4 pb-8 px-5">
         <div className="max-w-4xl mx-auto">
-          <p className="section-label justify-center mb-3">Development Officer</p>
           <OpportunitySimulator target={120000} inputs={INPUTS} calculate={calculate} />
         </div>
       </section>

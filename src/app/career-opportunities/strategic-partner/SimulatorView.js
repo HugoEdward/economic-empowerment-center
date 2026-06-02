@@ -2,6 +2,7 @@
 import OpportunitySimulator, { formatCurrency, formatNumber } from '@/components/OpportunitySimulator';
 import RoleSection from '@/components/RoleSection';
 import ExampleExplainer from '@/components/ExampleExplainer';
+import WhatMustIDo from '@/components/WhatMustIDo';
 
 const INPUTS = [
   { name:'tier', label:'Partnership Tier (1=Local, 5=Global)', min:1, max:5, step:1, default:3, unit:'tier' },
@@ -38,9 +39,30 @@ function calculate(v) {
 export default function SimulatorView() {
   return (
     <>
-      <section className="pt-20 pb-8 px-5">
+      <WhatMustIDo
+        subtitle="Strategic Partner Example"
+        actions={[
+          'Engage 500 organizations across the multicultural ecosystem',
+          'Activate strategic presence in 10 cities',
+          'Reach approximately 250,000 organized members',
+          'Sponsor 8 annual events with 16,000 cumulative audience',
+          'Run 250,000-person annual campaigns and outreach',
+          'Engage Passport to the World partnership programs',
+          'Coordinate with PR, media, technology, or service partners as applicable',
+          'Align partnership scope with community impact goals',
+          'Sustain engagement across the partnership term',
+          'Focus on long-term mutual value with organized communities',
+        ]}
+        represents={[
+          '500 Organizations',
+          '10 Cities Activated',
+          '250,000 Members Reached',
+          '8 Events Sponsored',
+        ]}
+        pathway="Illustrative partnership investment $580K – $1.45M"
+      />
+      <section className="pt-4 pb-8 px-5">
         <div className="max-w-4xl mx-auto">
-          <p className="section-label justify-center mb-3">Strategic Partner</p>
           <OpportunitySimulator
             target={0}
             customHeadline="STRATEGIC PARTNERSHIP — REACH & IMPACT AT SCALE"

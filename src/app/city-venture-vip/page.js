@@ -1,3 +1,5 @@
+import WhatMustIDo from '@/components/WhatMustIDo';
+
 export const metadata = { title: 'City Venture VIP — 1City.VIP Activation' };
 
 const STEPS = [
@@ -20,8 +22,31 @@ const ACTIVE_CITIES = [
 export default function CityVentureVIPPage() {
   return (
     <>
+      <WhatMustIDo
+        subtitle="City Venture VIP Example"
+        actions={[
+          'Apply for Consideration with your recognized entity or organization',
+          'Become recognized as the activation anchor for your city',
+          'Identify and engage local restaurants, retailers, and hospitality',
+          'Identify professionals: lawyers, doctors, accountants, real-estate',
+          'Activate Member Organizations operating in the city',
+          'Build merchant participation through MundusPASS',
+          'Coordinate Passport to the World visitor pathways',
+          'Develop city sponsor and tourism board relationships',
+          'Build sustained city-wide ecosystem activity',
+          'Sustainable income depends on activation, participation, compliance, and program rules',
+        ]}
+        represents={[
+          '1 Activated City',
+          'Local Merchants & Professionals',
+          'Member Organizations Engaged',
+          '1City.VIP Subdomain',
+        ]}
+        pathway="City activation → 1City.VIP recognition → sustainable revenue"
+        transition="SEE THE 7-STEP CITY ACTIVATION PATHWAY"
+      />
       {/* HERO */}
-      <section className="relative pt-28 pb-12 px-5 overflow-hidden">
+      <section className="relative pt-12 pb-12 px-5 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-navy-800/50 via-navy-950 to-navy-950 pointer-events-none" />
         <div className="absolute top-[-10%] right-[-10%] w-[700px] h-[700px] rounded-full bg-gold/[0.04] blur-3xl pointer-events-none" />
         <div className="relative z-10 max-w-4xl mx-auto text-center animate-fade-up">
