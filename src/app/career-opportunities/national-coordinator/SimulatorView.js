@@ -1,34 +1,41 @@
 'use client';
 import OpportunitySimulator, { formatCurrency, formatNumber } from '@/components/OpportunitySimulator';
 import RoleSection from '@/components/RoleSection';
+import ExampleExplainer from '@/components/ExampleExplainer';
 
 const INPUTS = [
-  { name:'states', label:'Active States / Provinces', min:1, max:50, step:1, default:10, unit:'states' },
-  { name:'citiesPerState', label:'Avg Cities per State', min:2, max:30, step:1, default:6, unit:'cities' },
-  { name:'orgsPerCity', label:'Avg Organizations per City', min:5, max:100, step:5, default:20, unit:'orgs' },
-  { name:'membersPerOrg', label:'Avg Members per Organization', min:50, max:1500, step:50, default:200, unit:'members' },
-  { name:'monthlyDues', label:'Monthly Member Dues', min:5, max:50, step:1, default:10, unit:'$' },
-  { name:'memberPurchase', label:'Avg Member Monthly Purchases', min:0, max:300, step:10, default:60, unit:'$' },
-  { name:'merchantsPerCity', label:'Merchants per City', min:10, max:500, step:10, default:60, unit:'merchants' },
-  { name:'nationalSponsors', label:'National Sponsors', min:0, max:50, step:1, default:5, unit:'sponsors' },
-  { name:'sponsorValue', label:'Avg National Sponsor Annual', min:0, max:500, step:10, default:100, unit:'$K' },
+  { name:'states', label:'Active States / Provinces', min:1, max:50, step:1, default:5, unit:'states' },
+  { name:'citiesPerState', label:'Avg Cities per State', min:2, max:50, step:1, default:5, unit:'cities' },
+  { name:'orgsPerCity', label:'Avg Organizations per City', min:5, max:200, step:5, default:50, unit:'orgs' },
+  { name:'membersPerOrg', label:'Avg Members per Organization', min:50, max:5000, step:50, default:1000, unit:'members' },
+  { name:'monthlyDues', label:'Monthly Member Dues', min:5, max:100, step:1, default:20, unit:'$' },
+  { name:'memberPurchase', label:'Avg Member Monthly Purchases', min:0, max:500, step:10, default:250, unit:'$' },
+  { name:'merchantsPerCity', label:'Avg Merchants per City', min:10, max:10000, step:50, default:2500, unit:'merchants' },
+  { name:'nationalSponsors', label:'National Sponsors', min:0, max:100, step:1, default:5, unit:'sponsors' },
+  { name:'sponsorValue', label:'Avg National Sponsor Annual', min:0, max:2000, step:25, default:250, unit:'$K' },
   { name:'nationalEvents', label:'National Annual Events', min:0, max:20, step:1, default:2, unit:'events' },
 ];
 
 function calculate(v) {
   const totalCities = v.states * v.citiesPerState;
   const totalOrgs = totalCities * v.orgsPerCity;
+  const developmentOfficers = totalOrgs;
+  const successLiaisons = Math.ceil(totalOrgs / 10);
+  const cityCoordinators = totalCities;
+  const stateCoordinators = v.states;
   const totalMembers = totalOrgs * v.membersPerOrg;
   const totalMerchants = totalCities * v.merchantsPerCity;
   const annualMemberDues = totalMembers * v.monthlyDues * 12;
   const annualMemberPurchases = totalMembers * v.memberPurchase * 12;
-  const annualMerchantActivity = totalMerchants * 50 * 12;
+  const annualMerchantActivity = totalMerchants * 200 * 12;
   const annualSponsors = v.nationalSponsors * v.sponsorValue * 1000;
-  const annualEvents = v.nationalEvents * 250000;
+  const annualEvents = v.nationalEvents * 1000000;
   const totalActivity = annualMemberDues + annualMemberPurchases + annualMerchantActivity + annualSponsors + annualEvents;
+
   return {
-    rangeLow: Math.round(totalActivity * 0.003),
-    rangeHigh: Math.round(totalActivity * 0.010),
+    rangeLow: Math.round(totalActivity * 0.00020),
+    rangeHigh: Math.round(totalActivity * 0.00027),
+    hierarchyLabel: `${v.states} States · ${totalCities} Cities · ${formatNumber(totalOrgs)} Organizations · ${formatNumber(developmentOfficers)} Development Officers · ${formatNumber(successLiaisons)} Success Liaisons · ${cityCoordinators} City Coordinators · ${stateCoordinators} State Coordinators · 1 National Coordinator (You)`,
     outputs: [
       { label:'Total Cities', value: formatNumber(totalCities) },
       { label:'Total Organizations', value: formatNumber(totalOrgs) },
@@ -49,6 +56,13 @@ export default function SimulatorView() {
           <OpportunitySimulator target={1000000} inputs={INPUTS} calculate={calculate} />
         </div>
       </section>
+      <ExampleExplainer>
+        This is a scalable national model, not a fixed quota: 5 states × 5 cities × 50 organizations =
+        25 cities and 1,250 organizations, with 1,250 Development Officers, 125 Success Liaisons,
+        25 City Coordinators, and 5 State Coordinators. Your actual national pathway depends on the
+        country's size, states or provinces, cities, organizations, chambers, merchants, national sponsors,
+        tourism, trade, and cultural participation.
+      </ExampleExplainer>
       <RoleSection title="Open national doors." cards={[
         ['What a National Coordinator Does','Builds national-level relationships, sponsor partnerships, federation structures, and country-wide activation pathways. Mentors State Coordinators. Organizes national events.'],
         ['What Must Happen','Multiple states operating with State Coordinators. National sponsor relationships established. Cross-state events. Federation governance. Country-wide compliance.'],
