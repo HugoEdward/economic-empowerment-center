@@ -77,15 +77,15 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
-            <Audience tag="Entrepreneurs" punch="NEW OPPORTUNITY IN YOUR CITY." href="/apply/entrepreneur/" />
-            <Audience tag="Member Organizations" punch="KEEP YOUR MISSION ALIVE." href="/apply/member-organization/" highlight />
-            <Audience tag="Churches / Faith Organizations" punch="STRENGTHEN YOUR CHURCH." href="/apply/member-organization/" />
-            <Audience tag="Chambers" punch="NEW VALUE FOR MEMBERS." href="/apply/chamber/" />
-            <Audience tag="Merchants / Professionals" punch="REACH NEW CUSTOMERS." href="/apply/merchant/" />
-            <Audience tag="Sponsors / Strategic Partners" punch="REAL IMPACT. REAL COMMUNITIES." href="/apply/sponsor/" />
+            <Audience tag="Entrepreneurs" punch="NEW OPPORTUNITY IN YOUR CITY." href="/for-entrepreneurs/" />
+            <Audience tag="Member Organizations" punch="KEEP YOUR MISSION ALIVE." href="/for-organizations/" highlight />
+            <Audience tag="Churches / Faith Organizations" punch="STRENGTHEN YOUR CHURCH." href="/for-churches/" />
+            <Audience tag="Chambers" punch="NEW VALUE FOR MEMBERS." href="/for-chambers/" />
+            <Audience tag="Merchants / Professionals" punch="REACH NEW CUSTOMERS." href="/for-merchants/" />
+            <Audience tag="Sponsors / Strategic Partners" punch="REAL IMPACT. REAL COMMUNITIES." href="/for-sponsors/" />
             <Audience tag="Cities / 1City.VIP" punch="GROW YOUR CITY." href="/city-venture-vip/" />
             <Audience tag="International Cultures Celebration" punch="TURN CULTURE INTO OPPORTUNITY." href="/international-cultures-celebration/" />
-            <Audience tag="Passport to the World" punch="TRAVEL AROUND THE WORLD." href="/international-cultures-celebration/" />
+            <Audience tag="Passport to the World" punch="TRAVEL AROUND THE WORLD." href="/passport-to-the-world/" />
           </div>
         </div>
       </section>
