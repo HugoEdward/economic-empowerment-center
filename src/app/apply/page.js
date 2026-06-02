@@ -49,19 +49,19 @@ export default function ApplyPage() {
             </div>
           ))}
 
-          {/* MUNDUS.CENTER */}
+          {/* COORDINATOR OPPORTUNITIES — internal during advisor review */}
           <div className="card border-gold/20 relative overflow-hidden">
             <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-gold to-transparent" />
             <div className="flex flex-col md:flex-row gap-5 items-start">
               <span className="text-3xl">🌐</span>
               <div className="flex-1">
-                <h2 className="font-display text-lg font-medium mb-1.5">Organization Success Liaison &amp; Coordinator Opportunities</h2>
+                <h2 className="font-display text-lg font-medium mb-1.5">Development Officer, Success Liaison &amp; Coordinator Opportunities</h2>
                 <p className="text-xs text-surface-secondary leading-relaxed mb-3">
-                  Success Liaisons and Coordinators operate through Mundus.Center, the
-                  administrative and infrastructure layer of the MUNDUS ecosystem.
+                  Six pathways to economic opportunity, each with an interactive simulator. Confidential
+                  compensation activates after recognition.
                 </p>
-                <a href="https://mundus.center/partners" target="_blank" rel="noopener noreferrer" className="btn-outline !text-xs !py-2 !px-5">
-                  Explore Opportunities at Mundus.Center ↗
+                <a href="/career-opportunities/" className="btn-outline !text-xs !py-2 !px-5">
+                  Explore Career Opportunities →
                 </a>
               </div>
             </div>

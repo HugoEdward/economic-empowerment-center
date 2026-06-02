@@ -127,6 +127,7 @@ function FullReviewForm({ onSubmit, submitting, setSubmitting }) {
       reviewer_type: fd.get('q9'),
       wiifm_answered: fd.get('q10'),
       impossible_to_ignore: fd.get('q11'),
+      showed_real_opportunity: fd.get('q12'),
       feedback: 'Rating: ' + rating + '/10',
       reviewer_name: fd.get('name'),
       reviewer_email: fd.get('email'),
@@ -166,6 +167,9 @@ function FullReviewForm({ onSubmit, submitting, setSubmitting }) {
           <select name="q10" className={CLS + ' appearance-none'}><option value="">Select...</option>{ANSWERED_WIIFM.map(a => <option key={a} value={a}>{a}</option>)}</select>
         </Q>
         <Q num="11" q="What would make this page impossible to ignore?"><textarea name="q11" rows={2} className={CLS + ' resize-y'} /></Q>
+        <Q num="12" q='Did this page show you a real opportunity?'>
+          <select name="q12" className={CLS + ' appearance-none'}><option value="">Select...</option>{ANSWERED_WIIFM.map(a => <option key={a} value={a}>{a}</option>)}</select>
+        </Q>
         <div className="grid grid-cols-2 gap-2.5 pt-2 border-t border-surface-border">
           <input name="name" placeholder="Name (optional)" className={CLS} />
           <input name="email" type="email" placeholder="Email (optional)" className={CLS} />
