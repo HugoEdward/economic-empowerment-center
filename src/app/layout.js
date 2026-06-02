@@ -3,13 +3,32 @@ import AdvisorPreviewGate from '@/components/AdvisorPreviewGate';
 import FeedbackButton from '@/components/FeedbackButton';
 
 export const metadata = {
-  title: { default: 'Economic Empowerment — Global Economic Ecosystem', template: '%s | Economic Empowerment' },
-  description: 'A global economic ecosystem connecting organizations, merchants, professionals, and members across 195+ countries and territories.',
+  title: { default: 'Economic Empowerment — Sustainable Revenue & Opportunities', template: '%s | Economic Empowerment' },
+  description: 'Sustainable revenue and economic opportunities for organizations, churches, chambers, entrepreneurs, merchants, and communities across 195+ countries and territories.',
+  keywords: ['economic empowerment','economic opportunities','sustainable revenue','membership organization revenue','church funding','chamber benefits','merchant customer growth','city economic development','cultural economic development','community empowerment','nonprofit sustainability','1City.VIP','MundusPASS','International Cultures Celebration','Passport to the World'],
+  openGraph: {
+    title: 'Economic Empowerment — Sustainable Revenue & Opportunities',
+    description: 'Sustainable revenue for organizations. New customers for merchants. Growth for cities. The resources are already organized.',
+    type: 'website',
+    locale: 'en_US',
+  },
+  alternates: {
+    languages: {
+      'en': '/',
+      'es': '/es/',
+      'pt': '/pt/',
+      'fr': '/fr/',
+      'ar': '/ar/',
+      'hi': '/hi/',
+      'zh': '/zh/',
+    },
+  },
 };
 
 const NAV = [
   { href: '/', label: 'Home' },
-  { href: '/organizations/', label: 'Organizations' },
+  { href: '/about/', label: 'About' },
+  { href: '/career-opportunities/', label: 'Careers' },
   { href: '/international-cultures-celebration/', label: 'Cultures Celebration' },
   { href: '/city-venture-vip/', label: 'City Venture' },
   { href: '/how-do-i-start-today/', label: 'How to Start' },
@@ -41,26 +60,34 @@ export default function RootLayout({ children }) {
           <div className="bg-navy-900 py-8 px-5 border-b border-surface-border/50">
             <div className="max-w-5xl mx-auto">
               <p className="text-[10px] font-bold tracking-widest uppercase text-gold text-center mb-5">The MUNDUS Ecosystem</p>
-              <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-2">
                 <a href="/" className="text-center bg-navy-800 border border-gold/20 rounded-xl px-3 py-3 hover:border-gold/40 transition-colors no-underline">
-                  <p className="font-mono text-[10px] text-gold mb-1">EconomicEmpowerment.Center</p>
-                  <p className="text-[9px] text-surface-muted leading-snug">Economic Empowerment system</p>
+                  <p className="font-mono text-[10px] text-gold mb-1">EconomicEmpowerment</p>
+                  <p className="text-[9px] text-surface-muted leading-snug">Sustainability pathway</p>
                 </a>
-                <a href="https://culturescelebration.com" target="_blank" rel="noopener noreferrer" className="text-center bg-navy-800 border border-surface-border rounded-xl px-3 py-3 hover:border-gold/30 transition-colors no-underline">
-                  <p className="font-mono text-[10px] text-gold mb-1">CulturesCelebration.com ↗</p>
-                  <p className="text-[9px] text-surface-muted leading-snug">Cultural & public engagement</p>
+                <a href="https://mundus.center/partners" target="_blank" rel="noopener noreferrer" className="text-center bg-navy-800 border border-surface-border rounded-xl px-3 py-3 hover:border-gold/30 transition-colors no-underline">
+                  <p className="font-mono text-[10px] text-gold mb-1">Mundus.Center ↗</p>
+                  <p className="text-[9px] text-surface-muted leading-snug">Contracts & compensation</p>
                 </a>
                 <a href="https://munduspass.com" target="_blank" rel="noopener noreferrer" className="text-center bg-navy-800 border border-surface-border rounded-xl px-3 py-3 hover:border-gold/30 transition-colors no-underline">
                   <p className="font-mono text-[10px] text-gold mb-1">MundusPASS ↗</p>
-                  <p className="text-[9px] text-surface-muted leading-snug">Benefits & transaction infrastructure</p>
+                  <p className="text-[9px] text-surface-muted leading-snug">Benefits & transactions</p>
+                </a>
+                <a href="https://culturescelebration.com" target="_blank" rel="noopener noreferrer" className="text-center bg-navy-800 border border-surface-border rounded-xl px-3 py-3 hover:border-gold/30 transition-colors no-underline">
+                  <p className="font-mono text-[10px] text-gold mb-1">CulturesCelebration ↗</p>
+                  <p className="text-[9px] text-surface-muted leading-snug">Culture & engagement</p>
                 </a>
                 <a href="/city-venture-vip/" className="text-center bg-navy-800 border border-surface-border rounded-xl px-3 py-3 hover:border-gold/30 transition-colors no-underline">
                   <p className="font-mono text-[10px] text-gold mb-1">1City.VIP</p>
-                  <p className="text-[9px] text-surface-muted leading-snug">City business & hospitality activation</p>
+                  <p className="text-[9px] text-surface-muted leading-snug">City activation</p>
                 </a>
                 <a href="https://culturescelebration.com" target="_blank" rel="noopener noreferrer" className="text-center bg-navy-800 border border-surface-border rounded-xl px-3 py-3 hover:border-gold/30 transition-colors no-underline">
                   <p className="font-mono text-[10px] text-gold mb-1">Passport to the World ↗</p>
-                  <p className="text-[9px] text-surface-muted leading-snug">Visitor & pavilion participation</p>
+                  <p className="text-[9px] text-surface-muted leading-snug">Visitor participation</p>
+                </a>
+                <a href="https://immigrantsalliance.org" target="_blank" rel="noopener noreferrer" className="text-center bg-navy-800 border border-surface-border rounded-xl px-3 py-3 hover:border-gold/30 transition-colors no-underline">
+                  <p className="font-mono text-[10px] text-gold mb-1">ImmigrantsAlliance ↗</p>
+                  <p className="text-[9px] text-surface-muted leading-snug">Federation & advocacy</p>
                 </a>
               </div>
             </div>
@@ -88,7 +115,7 @@ export default function RootLayout({ children }) {
           </div>
           <div className="bg-navy-950 py-4 px-5">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-3">
-              <p className="text-[11px] text-surface-muted">&copy; {new Date().getFullYear()} Economic Empowerment. All rights reserved.</p>
+              <p className="text-[11px] text-surface-muted">&copy; {new Date().getFullYear()} Economic Empowerment · Founded by Hugo Edward Juarez, Sr. · Since 1976</p>
               <div className="flex gap-4">
                 {['Privacy','Terms','Contact'].map(l => (
                   <a key={l} href="#" className="text-[11px] text-surface-muted hover:text-surface-primary transition-colors no-underline">{l}</a>
