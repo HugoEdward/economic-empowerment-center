@@ -1,5 +1,6 @@
 import { AudienceSection, AudienceProse, CheckList, FeasibilityBlock, ApplyCTA, AudienceHero } from '@/components/AudienceSection';
 import NeedsMap from '@/components/NeedsMap';
+import { PhaseLegend } from '@/components/PhaseIndicator';
 
 export const metadata = {
   title: 'For Chambers of Commerce — New Value for Members',
@@ -7,16 +8,16 @@ export const metadata = {
 };
 
 const CHAMBER_NEEDS = [
-  { num:1, need:'Sustainable Revenue & Financial Stability', why:'Chambers worldwide struggle with declining dues, rising costs, and unpredictable funding.', solution:'Revenue-generating programs, shared services, sponsorship pathways, grant-readiness support, and monetizable member benefits that stabilize Chamber finances.' },
-  { num:2, need:'Membership Growth & Retention', why:'Chambers must constantly attract new members while keeping existing ones engaged.', solution:'High-value benefits, business support services, training programs, and digital tools that increase both new-member acquisition and renewal rates.' },
-  { num:3, need:'Clear, Modern Value Proposition', why:'Businesses demand measurable ROI; traditional networking alone is no longer enough.', solution:'A ready-made suite of impactful programs, services, and measurable outcomes Chambers can offer immediately — strengthening the value story.' },
-  { num:4, need:'Workforce Development & Talent Pipeline', why:'Businesses everywhere face labor shortages and skill gaps.', solution:'Workforce-readiness programs, employer pipelines, upskilling workshops, and training partnerships Chambers can deploy locally.' },
-  { num:5, need:'Small Business & Entrepreneurship Support', why:'Most Chamber members are small businesses needing hands-on help to survive and grow.', solution:'Coaching, financial literacy, micro-enterprise support, startup tools, and entrepreneurship programs Chambers can offer directly to members.' },
-  { num:6, need:'Advocacy & Government Influence', why:'Chambers must represent business interests but often lack research, data, or policy capacity.', solution:'Policy briefs, economic data, research, and advocacy tools that strengthen Chamber influence with government — including UN ECOSOC participation pathways.' },
-  { num:7, need:'Digital Transformation (Chamber + Members)', why:'Many Chambers and their members lag in technology, automation, and digital marketing.', solution:'Digital training, e-commerce support, modern tech tools, and digital adoption programs for both Chambers and their business members.' },
-  { num:8, need:'Partnerships & Sponsorship Development', why:'Chambers need corporate, government, and nonprofit partners to expand resources and impact.', solution:'Connections to national/global partners, government agencies, funders, and sponsorship opportunities through the ecosystem.' },
-  { num:9, need:'Branding, Marketing & Visibility', why:'Many Chambers struggle with low visibility or outdated public perception.', solution:'Marketing content, communication strategies, campaigns, and co-branding through CulturesCelebration.com, ImmigrantsAlliance.org, and 1City.VIP.' },
-  { num:10, need:'Leadership Capacity & Long-Term Sustainability', why:'Boards, staff, and volunteers often lack training, structure, or succession planning.', solution:'Governance training, board development, leadership coaching, succession planning, and strategic planning tools to strengthen long-term sustainability.' },
+  { num:1, need:'Sustainable Revenue & Financial Stability', phase:'activating', why:'Chambers worldwide struggle with declining dues, rising costs, and unpredictable funding.', solution:'Revenue-generating programs, sponsorship pathways, monetizable member benefits, and structured income floor through member-merchant activation. Activates per cohort as Stripe processing is provisioned.' },
+  { num:2, need:'Membership Growth & Retention', phase:'activating', why:'Chambers must constantly attract new members while keeping existing ones engaged.', solution:'High-value member benefits through MundusPASS, business support tools, and training programs that increase acquisition and renewal. Live as merchant network activates city by city.' },
+  { num:3, need:'Clear, Modern Value Proposition', phase:'available', why:'Businesses demand measurable ROI; traditional networking alone is no longer enough.', solution:'Ready-made suite of cultural visibility, sponsor pathways, and partner introductions Chambers can offer to member businesses today.' },
+  { num:4, need:'Workforce Development & Talent Pipeline', phase:'developing', why:'Businesses everywhere face labor shortages and skill gaps.', solution:'Workforce-readiness programs, employer pipelines, upskilling workshops. Formal workforce-development partnerships activate in Phase 2 as the ecosystem matures.' },
+  { num:5, need:'Small Business & Entrepreneurship Support', phase:'activating', why:'Most Chamber members are small businesses needing hands-on help to survive and grow.', solution:'Entrepreneur pathway through MundusPASS, micro-enterprise tools, and merchant activation. Direct coaching and financial literacy programs activate per cohort.' },
+  { num:6, need:'Advocacy & Government Influence', phase:'available', why:'Chambers must represent business interests but often lack research, data, or policy capacity.', solution:'UN ECOSOC participation pathway through ImmigrantsAlliance.org federation (Special Consultative Status since 1989), International Cultures Conference at the UN, and ecosystem advocacy tools.' },
+  { num:7, need:'Digital Transformation (Chamber + Members)', phase:'activating', why:'Many Chambers and their members lag in technology, automation, and digital marketing.', solution:'MundusPASS digital infrastructure for member businesses, modern admin tools, and digital adoption support. Full chamber-facing dashboards are Phase 2.' },
+  { num:8, need:'Partnerships & Sponsorship Development', phase:'available', why:'Chambers need corporate, government, and nonprofit partners to expand resources and impact.', solution:'Direct connections to national and global partners through the ecosystem, government agency relationships through Immigrants Alliance, and sponsor pathways live today.' },
+  { num:9, need:'Branding, Marketing & Visibility', phase:'available', why:'Many Chambers struggle with low visibility or outdated public perception.', solution:'Co-branding through CulturesCelebration.com, ImmigrantsAlliance.org, the International Cultures–Immigrants Parade (41 annual editions), and 1City.VIP city sites.' },
+  { num:10, need:'Leadership Capacity & Long-Term Sustainability', phase:'activating', why:'Boards, staff, and volunteers often lack training, structure, or succession planning.', solution:'Direct access to ecosystem leadership advisors and governance frameworks. Formal Leadership Academy and succession-planning toolkits activate in Phase 2.' },
 ];
 
 export default function Page() {
@@ -36,6 +37,7 @@ export default function Page() {
       </AudienceSection>
 
       <AudienceSection label="10 Most Pressing Chamber Needs · And How EEC Addresses Each" dark>
+        <div className="mb-6"><PhaseLegend /></div>
         <NeedsMap needs={CHAMBER_NEEDS} />
       </AudienceSection>
 

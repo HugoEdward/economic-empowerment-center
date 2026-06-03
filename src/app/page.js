@@ -38,12 +38,19 @@ export default function Home() {
           </div>
 
           {/* 5 SHOW ME PUNCHLINES */}
-          <div className="grid md:grid-cols-5 gap-3 mb-8 animate-fade-up-delay">
+          <div className="grid md:grid-cols-5 gap-3 mb-6 animate-fade-up-delay">
             <ShowMe punch="NEED FUNDING?" href="#audiences" />
             <ShowMe punch="KEEP YOUR MISSION ALIVE." href="#audiences" />
             <ShowMe punch="BUILD SUSTAINABLE REVENUE." href="#audiences" highlight />
             <ShowMe punch="SERVE MORE PEOPLE." href="#audiences" />
             <ShowMe punch="GROW YOUR CITY." href="/city-venture-vip/" />
+          </div>
+
+          {/* DIAGNOSTIC CTA — guide visitors who don't know where to start */}
+          <div className="text-center mb-8 animate-fade-up-delay">
+            <a href="/organizational-needs-assessment/" className="inline-flex items-center gap-2 text-[12px] text-gold no-underline hover:underline">
+              <span className="font-mono">↪</span> Not sure where to start? Take the 60-second Needs Assessment →
+            </a>
           </div>
 
           {/* MISSION → IMPACT FLOW */}
