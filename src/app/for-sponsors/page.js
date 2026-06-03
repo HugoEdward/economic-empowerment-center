@@ -11,7 +11,7 @@ export default function Page() {
       <AudienceHero
         tag="For Sponsors & Strategic Partners"
         title={<>Real impact. <em className="text-gold italic">Real communities.</em></>}
-        subtitle="A pathway for corporations, foundations, NGOs, government partners, media, and technology partners to engage organized multicultural ecosystems with measurable impact."
+        subtitle="We help your company reach real communities and create real impact."
       />
 
       <AudienceSection label="Who Is This For?" title={<>Partners who want <em className="text-gold italic">organized reach.</em></>}>

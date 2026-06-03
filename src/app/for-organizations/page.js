@@ -26,7 +26,7 @@ export default function Page() {
       <AudienceHero
         tag="For Member Organizations · Churches · Chambers"
         title={<>Keep your mission alive. <em className="text-gold italic">Strengthen your organization.</em></>}
-        subtitle="A pathway for socio-cultural organizations, churches, chambers, youth clubs, sports clubs, NGOs, and community groups to move beyond donation dependency through structured, sustainable economic empowerment."
+        subtitle="We help your organization stay strong — beyond donations, beyond grant cycles."
       />
 
       <AudienceSection label="We Know What You Face">

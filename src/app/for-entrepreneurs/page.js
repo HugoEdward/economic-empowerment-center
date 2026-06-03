@@ -12,7 +12,7 @@ export default function Page() {
       <AudienceHero
         tag="For Entrepreneurs"
         title={<>New opportunity <em className="text-gold italic">in your city.</em></>}
-        subtitle="An individual entrepreneur joins MundusPASS to offer products or services to the network's members — at a discounted rate plus an optional Bonus."
+        subtitle="We help you reach new customers in your city — by offering a discount and a bonus."
       />
 
       <AudienceSection label="Who's Who">

@@ -26,7 +26,7 @@ export default function Page() {
       <AudienceHero
         tag="For Chambers of Commerce"
         title={<>New value <em className="text-gold italic">for your members.</em></>}
-        subtitle="Give member businesses access to additional visibility, customers, partnerships, events, tourism opportunities, cultural initiatives, and participation in a larger economic ecosystem."
+        subtitle="We help your chamber bring real value to your member businesses."
       />
 
       <AudienceSection label="We Know What Chambers Face">

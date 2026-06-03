@@ -11,7 +11,7 @@ export default function Page() {
       <AudienceHero
         tag="For Merchants & Professionals"
         title={<>Reach <em className="text-gold italic">organized customers.</em></>}
-        subtitle="Offer approved member benefits to reach organized, opt-in audiences from recognized Member Organizations across your city and beyond."
+        subtitle="We help your business reach new, organized customers across your city and beyond."
       />
 
       <AudienceSection label="Who Is This For?" title={<>Businesses and <em className="text-gold italic">licensed professionals.</em></>}>

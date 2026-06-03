@@ -26,7 +26,7 @@ export default function Page() {
       <AudienceHero
         tag="For Churches & Faith Organizations"
         title={<>Strengthen <em className="text-gold italic">your church.</em></>}
-        subtitle="We understand what you are going through. We are here to support you. A pathway for churches, mosques, temples, congregations, and faith-based communities to build sustainability without sacrificing mission."
+        subtitle="We understand what you are going through. We help your church serve families and stay strong."
       />
 
       <AudienceSection label="We Understand What You Face">

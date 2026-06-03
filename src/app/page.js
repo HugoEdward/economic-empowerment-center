@@ -2,11 +2,11 @@ import OpportunityTable from '@/components/OpportunityTable';
 import FounderTrustBlock from '@/components/FounderTrustBlock';
 
 export const metadata = {
-  title: 'Economic Empowerment — Economic Opportunities In Your Own Backyard',
-  description: 'Sustainable revenue and economic opportunities for organizations, churches, chambers, entrepreneurs, merchants, and communities. Activate the resources already organized in your city.',
+  title: 'Economic Empowerment Center — We help people, organizations, and cities grow stronger together',
+  description: 'Choose what you want to do. We help organizations stay strong, businesses grow, communities thrive, cities expand, and cultures connect.',
   openGraph: {
-    title: 'Economic Empowerment — Show Me The Opportunity',
-    description: 'Sustainable revenue for organizations. New customers for merchants. Growth for cities. The resources are already organized.',
+    title: 'Economic Empowerment Center',
+    description: 'We help people, organizations, and cities grow stronger — together.',
     type: 'website',
   },
 };
@@ -14,198 +14,131 @@ export const metadata = {
 export default function Home() {
   return (
     <>
-      {/* HERO — SHOW ME DISCOVERY */}
-      <section className="relative min-h-[95vh] flex items-center pt-16 pb-12 px-5 overflow-hidden">
+      {/* HERO — 5-second comprehension */}
+      <section className="relative pt-24 pb-10 px-5 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-navy-800/50 via-navy-950 to-navy-950 pointer-events-none" />
-        <div className="absolute top-[-15%] right-[-10%] w-[700px] h-[700px] rounded-full bg-gold/[0.05] blur-3xl pointer-events-none" />
-        <div className="absolute bottom-[-15%] left-[-10%] w-[500px] h-[500px] rounded-full bg-gold/[0.03] blur-3xl pointer-events-none" />
+        <div className="absolute top-[-10%] right-[-10%] w-[600px] h-[600px] rounded-full bg-gold/[0.05] blur-3xl pointer-events-none" />
 
-        <div className="relative z-10 max-w-5xl mx-auto w-full">
-          <div className="animate-fade-up text-center mb-10">
-            <p className="text-gold text-[10px] font-bold tracking-[0.3em] uppercase mb-2">A Discovery</p>
-            <p className="text-[9px] text-surface-muted tracking-wider mb-5">
-              Founded by <a href="/about/" className="text-gold/80 no-underline hover:underline">Hugo Edward Juarez, Sr.</a> · Since 1976 · UN ECOSOC Status Since 1989
-            </p>
-            <h1 className="font-display text-[2.6rem] md:text-[4rem] font-medium leading-[1.02] tracking-tight mb-5 max-w-4xl mx-auto">
-              Economic opportunities are <em className="text-gold italic">already around you.</em>
-            </h1>
-            <p className="text-base md:text-lg text-surface-secondary leading-relaxed max-w-2xl mx-auto">
-              Hundreds of millions of people are organized. Millions of businesses already serve them.
-              The structure exists. The relationships exist. The trust exists.
-              <br/>
-              <span className="text-surface-primary font-medium">Economic Empowerment Center brings them together.</span>
-            </p>
+        <div className="relative z-10 max-w-5xl mx-auto text-center animate-fade-up">
+          <h1 className="font-display text-[2.2rem] md:text-[3.4rem] font-medium leading-[1.08] tracking-tight mb-5 max-w-4xl mx-auto">
+            We help people, organizations, and cities <em className="text-gold italic">grow stronger — together.</em>
+          </h1>
+          <p className="text-base md:text-lg text-surface-secondary">
+            Choose what you want to do.
+          </p>
+        </div>
+      </section>
+
+      {/* FIVE BIG CARDS — primary navigation */}
+      <section className="pb-12 px-5">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-5 gap-3 animate-fade-up-delay">
+          <BigCard icon="🏠" title="ORGANIZATIONS" promise="We help your organization stay strong."
+            examples={['Churches','Clubs','NGOs','Associations','Cultural Organizations','Chambers']}
+            cta="SHOW ME HOW" href="/for-organizations/" />
+          <BigCard icon="🛍️" title="BUSINESSES" promise="We help your business grow."
+            examples={['Entrepreneurs','Merchants','Professionals','Restaurants','Service Providers']}
+            cta="SHOW ME HOW" href="/for-merchants/" />
+          <BigCard icon="🌉" title="CONNECTORS" promise="We help people find opportunities."
+            examples={['Success Liaisons','Coordinators','Federations','Business Associations','Chambers']}
+            cta="SHOW ME HOW" href="/career-opportunities/" highlight />
+          <BigCard icon="🌎" title="CULTURES" promise="Experience the world."
+            examples={['Passport to the World','International Cultures Celebration','Parade','Conference']}
+            cta="EXPLORE" href="/international-cultures-celebration/" />
+          <BigCard icon="🤝" title="COMMUNITIES" promise="Building stronger communities."
+            examples={['Immigrants Alliance','Advocacy','Unity','Representation']}
+            cta="JOIN US" href="https://immigrantsalliance.org" external />
+        </div>
+      </section>
+
+      {/* THE BRIDGE */}
+      <section className="py-14 px-5 bg-navy-900">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-9">
+            <p className="section-label justify-center mb-3">How It Connects</p>
+            <h2 className="font-display text-2xl md:text-3xl font-medium tracking-tight">
+              We are the bridge that <em className="text-gold italic">connects everyone.</em>
+            </h2>
           </div>
 
-          {/* 5 SHOW ME PUNCHLINES */}
-          <div className="grid md:grid-cols-5 gap-3 mb-6 animate-fade-up-delay">
-            <ShowMe punch="NEED FUNDING?" href="#audiences" />
-            <ShowMe punch="KEEP YOUR MISSION ALIVE." href="#audiences" />
-            <ShowMe punch="BUILD SUSTAINABLE REVENUE." href="#audiences" highlight />
-            <ShowMe punch="SERVE MORE PEOPLE." href="#audiences" />
-            <ShowMe punch="GROW YOUR CITY." href="/city-venture-vip/" />
+          <div className="grid grid-cols-2 gap-3 max-w-2xl mx-auto mb-2">
+            <BridgePartner name="Cultures Celebration" tag="The World Comes Together" />
+            <BridgePartner name="Immigrants Alliance" tag="Communities United" />
           </div>
 
-          {/* DIAGNOSTIC CTA — guide visitors who don't know where to start */}
-          <div className="text-center mb-8 animate-fade-up-delay">
-            <a href="/organizational-needs-assessment/" className="inline-flex items-center gap-2 text-[12px] text-gold no-underline hover:underline">
-              <span className="font-mono">↪</span> Not sure where to start? Take the 60-second Needs Assessment →
+          <div className="relative max-w-3xl mx-auto h-12 mb-2 flex items-center" aria-hidden>
+            <div className="absolute inset-x-[16%] top-1/2 -translate-y-1/2 h-px bg-gradient-to-r from-gold/10 via-gold/40 to-gold/10" />
+            <div className="absolute left-[16%] top-1/2 -translate-y-1/2 w-px h-6 bg-gold/30" />
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-px h-6 bg-gold/30" />
+            <div className="absolute right-[16%] top-1/2 -translate-y-1/2 w-px h-6 bg-gold/30" />
+          </div>
+
+          <div className="grid grid-cols-3 gap-3 max-w-3xl mx-auto">
+            <BridgePillar label="Organizations" sub="need support" href="/for-organizations/" />
+            <BridgePillar label="Connectors" sub="bring people together" href="/career-opportunities/" center />
+            <BridgePillar label="Businesses" sub="offer value" href="/for-merchants/" />
+          </div>
+
+          <div className="max-w-2xl mx-auto mt-9 space-y-1.5 text-center">
+            <p className="text-[13px] text-surface-secondary">Organizations need support.</p>
+            <p className="text-[13px] text-surface-secondary">Businesses offer value.</p>
+            <p className="text-[13px] text-surface-secondary">Connectors bring people together.</p>
+            <p className="text-[14px] text-surface-primary font-medium mt-3">Economic Empowerment Center helps everyone grow.</p>
+          </div>
+
+          <div className="text-center mt-8">
+            <a href="/organizational-needs-assessment/" className="text-[11px] text-gold no-underline hover:underline">
+              ↪ Not sure where to start? Take the 60-second Needs Assessment →
             </a>
           </div>
-
-          {/* MISSION → IMPACT FLOW */}
-          <div className="bg-navy-800/50 border border-gold/15 rounded-2xl px-5 py-3 max-w-3xl mx-auto">
-            <div className="flex flex-wrap items-center justify-center gap-2 text-[10px] font-medium">
-              <span className="text-surface-secondary">Mission</span>
-              <span className="text-gold/40">→</span>
-              <span className="text-surface-secondary">Funding</span>
-              <span className="text-gold/40">→</span>
-              <span className="text-gold">Sustainability</span>
-              <span className="text-gold/40">→</span>
-              <span className="text-surface-secondary">Growth</span>
-              <span className="text-gold/40">→</span>
-              <span className="text-surface-primary font-medium">Impact</span>
-            </div>
-          </div>
         </div>
       </section>
 
-      {/* TRUST BLOCK — first scroll position */}
+      {/* Below the fold — existing content moved lower, NOT deleted */}
       <FounderTrustBlock />
 
-      {/* AUDIENCES — SHOW ME */}
-      <section id="audiences" className="py-16 px-5 bg-navy-900">
+      <section id="audiences" className="py-14 px-5">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-10">
-            <p className="section-label justify-center">Who This Is For</p>
-            <h2 className="font-display text-2xl md:text-3xl font-medium tracking-tight mb-3">
-              You may be sitting on <em className="text-gold italic">the activation point.</em>
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
-            <Audience tag="Entrepreneurs" punch="NEW OPPORTUNITY IN YOUR CITY." href="/for-entrepreneurs/" />
-            <Audience tag="Member Organizations" punch="KEEP YOUR MISSION ALIVE." href="/for-organizations/" highlight />
-            <Audience tag="Churches / Faith Organizations" punch="STRENGTHEN YOUR CHURCH." href="/for-churches/" />
-            <Audience tag="Chambers" punch="NEW VALUE FOR MEMBERS." href="/for-chambers/" />
-            <Audience tag="Merchants / Professionals" punch="REACH NEW CUSTOMERS." href="/for-merchants/" />
-            <Audience tag="Sponsors / Strategic Partners" punch="REAL IMPACT. REAL COMMUNITIES." href="/for-sponsors/" />
-            <Audience tag="Cities / 1City.VIP" punch="GROW YOUR CITY." href="/city-venture-vip/" />
-            <Audience tag="International Cultures Celebration" punch="TURN CULTURE INTO OPPORTUNITY." href="/international-cultures-celebration/" />
-            <Audience tag="Passport to the World" punch="TRAVEL AROUND THE WORLD." href="/passport-to-the-world/" />
-          </div>
-        </div>
-      </section>
-
-      {/* ENTREPRENEUR PATHWAY */}
-      <section className="py-16 px-5">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-10">
-            <p className="section-label justify-center">For Entrepreneurs</p>
-            <h2 className="font-display text-3xl md:text-4xl font-medium tracking-tight mb-3">
-              Trusted people can help <em className="text-gold italic">activate entire cities.</em>
-            </h2>
-            <p className="text-sm text-surface-secondary max-w-2xl mx-auto">
-              You already know the organizations. You already know the merchants. You already know your community.
-            </p>
-          </div>
-
-          <div className="bg-navy-800 border border-gold/15 rounded-2xl p-6 relative overflow-hidden mb-6">
-            <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-gold to-transparent" />
-            <div className="grid grid-cols-2 md:grid-cols-7 gap-2 items-center justify-items-center">
-              <Node label="You" highlight />
-              <Arrow />
-              <Node label="Organizations" />
-              <Arrow />
-              <Node label="Merchants" />
-              <Arrow />
-              <Node label="Professionals" />
-            </div>
-            <div className="text-center my-3 text-gold/40 text-lg">↓</div>
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-2 items-center justify-items-center">
-              <Node label="1City.VIP" highlight />
-              <Arrow />
-              <Node label="City Participation" />
-              <Arrow />
-              <Node label="Economic Empowerment" highlight />
-            </div>
-          </div>
-
-          <div className="text-center">
-            <a href="/apply/entrepreneur/" className="btn-gold">Entrepreneur Application</a>
-          </div>
-        </div>
-      </section>
-
-      {/* CAREER OPPORTUNITIES TEASER */}
-      <section className="py-16 px-5 bg-navy-900">
-        <div className="max-w-5xl mx-auto">
           <div className="text-center mb-8">
-            <p className="section-label justify-center">Career Opportunities</p>
-            <h2 className="font-display text-2xl md:text-3xl font-medium tracking-tight mb-3">
-              Build economic opportunities <em className="text-gold italic">where you live.</em>
+            <p className="section-label justify-center">More Detail · By Audience</p>
+            <h2 className="font-display text-2xl md:text-3xl font-medium tracking-tight">
+              Which one are you?
             </h2>
-            <p className="text-sm text-surface-secondary max-w-2xl mx-auto">
-              Six-figure opportunity pathways through approved participation, performance, retention, and disciplined execution.
-            </p>
           </div>
-          <div className="text-center">
-            <a href="/career-opportunities/" className="btn-gold">SHOW ME →</a>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
+            <Audience tag="Entrepreneurs" punch="New opportunity in your city." href="/for-entrepreneurs/" />
+            <Audience tag="Member Organizations" punch="Keep your mission alive." href="/for-organizations/" highlight />
+            <Audience tag="Churches / Faith Organizations" punch="Strengthen your church." href="/for-churches/" />
+            <Audience tag="Chambers" punch="New value for members." href="/for-chambers/" />
+            <Audience tag="Merchants / Professionals" punch="Reach new customers." href="/for-merchants/" />
+            <Audience tag="Sponsors / Strategic Partners" punch="Real impact. Real communities." href="/for-sponsors/" />
+            <Audience tag="Cities / 1City.VIP" punch="Grow your city." href="/city-venture-vip/" />
+            <Audience tag="International Cultures Celebration" punch="Turn culture into opportunity." href="/international-cultures-celebration/" />
+            <Audience tag="Passport to the World" punch="Travel around the world." href="/passport-to-the-world/" />
           </div>
         </div>
       </section>
 
-      {/* THE ECOSYSTEM */}
-      <section className="py-16 px-5">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-10">
-            <p className="section-label justify-center">Federated Economic Ecosystem Infrastructure</p>
-            <h2 className="font-display text-2xl md:text-3xl font-medium tracking-tight mb-3">
-              Separate platforms. <em className="text-gold italic">Connected purpose.</em>
-            </h2>
-            <p className="text-sm text-surface-secondary max-w-2xl mx-auto">
-              Each platform has its own mission. Together, they form an integrated pathway from culture to economic empowerment.
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-6">
-            <EcoCard tag="You Are Here" name="EconomicEmpowerment.Center" desc="Economic opportunities and sustainability pathway." href="/" here />
-            <EcoCard tag="Cultural Engine" name="CulturesCelebration.com" desc="Culture, tourism, public participation, city/nation visibility." href="https://culturescelebration.com" external />
-            <EcoCard tag="Administration" name="Mundus.Center" desc="Contracts, compensation, payments, compliance." href="https://mundus.center/partners" external />
-            <EcoCard tag="Transaction Layer" name="MundusPASS" desc="Benefits, transactions, members, merchants." href="https://munduspass.com" external />
-            <EcoCard tag="City Activation" name="1City.VIP" desc="City business, tourism, merchant, hospitality." href="/city-venture-vip/" />
-            <EcoCard tag="Federation" name="ImmigrantsAlliance.org" desc="Federation, immigrant organizations, multicultural leadership." href="https://immigrantsalliance.org" external />
-          </div>
-
-          <div className="text-center">
-            <a href="/three-platforms/" className="text-[11px] text-gold no-underline hover:underline">See How The Three Platforms Work Together →</a>
-          </div>
+      <section className="py-14 px-5 bg-navy-900">
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="section-label justify-center">Career Opportunities</p>
+          <h2 className="font-display text-2xl md:text-3xl font-medium tracking-tight mb-3">
+            Help your city <em className="text-gold italic">grow stronger.</em>
+          </h2>
+          <p className="text-sm text-surface-secondary max-w-2xl mx-auto mb-5">
+            Six paths to build a career while strengthening organizations and businesses in your community.
+          </p>
+          <a href="/career-opportunities/" className="btn-gold">See the Six Paths →</a>
         </div>
       </section>
 
-      {/* GOLDEN OPPORTUNITIES */}
-      <section className="py-16 px-5 bg-navy-900">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-10">
-            <p className="section-label justify-center">The Opportunity Dashboard</p>
-            <h2 className="font-display text-3xl md:text-4xl font-medium tracking-tight mb-3">
-              Golden opportunities in your <em className="text-gold italic">own backyard.</em>
-            </h2>
-            <p className="text-sm text-surface-secondary">Every city. Every country. Every territory.</p>
-          </div>
-          <OpportunityTable />
-        </div>
-      </section>
-
-      {/* CITY VENTURE VIP TEASER */}
       <section className="py-14 px-5">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="section-label justify-center">City Venture VIP</p>
+          <p className="section-label justify-center">Cities</p>
           <h2 className="font-display text-2xl md:text-3xl font-medium tracking-tight mb-3">
             Activate <em className="text-gold italic">your city.</em>
           </h2>
           <p className="text-sm text-surface-secondary max-w-2xl mx-auto mb-5">
-            If your city does not yet exist in 1City.VIP, a clear seven-step pathway shows how a recognized entrepreneur or organization may begin activating it.
+            A clear seven-step pathway to grow your city.
           </p>
           <div className="flex flex-wrap justify-center gap-2 mb-5">
             <span className="text-[10px] font-mono bg-navy-800 border border-gold/15 rounded-full px-3 py-1 text-gold">Kuala_Lumpur.1City.VIP</span>
@@ -213,16 +146,49 @@ export default function Home() {
             <span className="text-[10px] font-mono bg-navy-800 border border-gold/15 rounded-full px-3 py-1 text-gold">Newark.1City.VIP</span>
             <span className="text-[10px] font-mono bg-navy-800 border border-gold/15 rounded-full px-3 py-1 text-gold">Copacabana.VIP</span>
           </div>
-          <a href="/city-venture-vip/" className="btn-gold">SHOW ME →</a>
+          <a href="/city-venture-vip/" className="btn-gold">Show Me How →</a>
         </div>
       </section>
 
-      {/* FINAL CTA */}
+      <section className="py-14 px-5 bg-navy-900">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-8">
+            <p className="section-label justify-center">The Three Platforms</p>
+            <h2 className="font-display text-2xl md:text-3xl font-medium tracking-tight mb-3">
+              Three platforms. <em className="text-gold italic">One ecosystem.</em>
+            </h2>
+            <p className="text-sm text-surface-secondary max-w-2xl mx-auto">
+              Identity, culture, and sustainability — together.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-3 gap-3 mb-6">
+            <EcoCard tag="You Are Here" name="EconomicEmpowerment.Center" desc="We help everyone grow." href="/" here />
+            <EcoCard tag="Cultural Engine" name="CulturesCelebration.com" desc="The world comes together." href="https://culturescelebration.com" external />
+            <EcoCard tag="Federation" name="ImmigrantsAlliance.org" desc="Communities united." href="https://immigrantsalliance.org" external />
+          </div>
+          <div className="text-center">
+            <a href="/three-platforms/" className="text-[11px] text-gold no-underline hover:underline">See How The Three Platforms Work Together →</a>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-14 px-5">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-8">
+            <p className="section-label justify-center">More Detail · Opportunity Dashboard</p>
+            <h2 className="font-display text-2xl md:text-3xl font-medium tracking-tight mb-3">
+              The opportunities <em className="text-gold italic">already near you.</em>
+            </h2>
+          </div>
+          <OpportunityTable />
+        </div>
+      </section>
+
       <section className="py-16 px-5 bg-navy-900">
         <div className="max-w-3xl mx-auto text-center">
           <p className="section-label justify-center">Apply for Consideration</p>
           <h2 className="font-display text-3xl md:text-4xl font-medium tracking-tight mb-4">
-            The opportunity is real. <em className="text-gold italic">Your move.</em>
+            Ready to start? <em className="text-gold italic">Your move.</em>
           </h2>
           <a href="/apply/" className="btn-gold">View All Application Types</a>
         </div>
@@ -231,47 +197,58 @@ export default function Home() {
   );
 }
 
-function ShowMe({ punch, href, highlight }) {
+function BigCard({ icon, title, promise, examples, cta, href, highlight, external }) {
+  const externalProps = external ? { target: '_blank', rel: 'noopener noreferrer' } : {};
   return (
-    <a href={href} className={`block rounded-xl px-4 py-5 border text-center no-underline transition-all hover:translate-y-[-2px] ${highlight ? 'bg-gold/[0.08] border-gold/30' : 'bg-navy-800 border-surface-border hover:border-gold/25'}`}>
-      <p className={`font-display text-[12px] md:text-[13px] font-bold leading-tight tracking-tight mb-2 ${highlight ? 'text-gold' : 'text-surface-primary'}`}>{punch}</p>
-      <p className="text-[10px] font-bold tracking-widest uppercase text-gold/80">SHOW ME →</p>
+    <a href={href} {...externalProps} className={`group block rounded-2xl p-5 no-underline transition-all hover:-translate-y-0.5 ${highlight ? 'bg-gold/[0.06] border-2 border-gold/40 hover:border-gold' : 'bg-navy-800 border border-surface-border hover:border-gold/40'}`}>
+      <div className="text-3xl mb-3" aria-hidden>{icon}</div>
+      <p className={`text-[10px] font-bold tracking-[0.2em] uppercase mb-2 ${highlight ? 'text-gold' : 'text-gold/80'}`}>{title}</p>
+      <p className="text-[14px] font-medium text-surface-primary leading-snug mb-4">{promise}</p>
+      <ul className="space-y-0.5 mb-5">
+        {examples.map(ex => <li key={ex} className="text-[11px] text-surface-secondary leading-snug">{ex}</li>)}
+      </ul>
+      <p className={`text-[10px] font-bold tracking-[0.15em] uppercase ${highlight ? 'text-gold' : 'text-gold'} flex items-center gap-1`}>
+        {cta} <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
+      </p>
+    </a>
+  );
+}
+
+function BridgePartner({ name, tag }) {
+  return (
+    <div className="bg-navy-800 border border-gold/15 rounded-xl px-4 py-2.5 text-center">
+      <p className="text-[9px] font-bold tracking-widest uppercase text-gold/70 mb-0.5">{tag}</p>
+      <p className="text-[12px] text-surface-primary font-medium">{name}</p>
+    </div>
+  );
+}
+
+function BridgePillar({ label, sub, href, center }) {
+  return (
+    <a href={href} className={`block text-center rounded-2xl py-5 px-3 no-underline transition-colors ${center ? 'bg-gold/[0.06] border-2 border-gold/40 hover:border-gold' : 'bg-navy-800 border border-surface-border hover:border-gold/30'}`}>
+      <p className={`font-display text-base md:text-lg font-medium mb-0.5 ${center ? 'text-gold' : 'text-surface-primary'}`}>{label}</p>
+      <p className="text-[10px] text-surface-muted">{sub}</p>
     </a>
   );
 }
 
 function Audience({ tag, punch, href, highlight }) {
   return (
-    <a href={href} className={`block bg-navy-800 rounded-2xl p-5 border relative overflow-hidden no-underline transition-all hover:translate-y-[-2px] ${highlight ? 'border-gold/30' : 'border-surface-border hover:border-gold/20'}`}>
-      {highlight && <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-gold to-transparent" />}
-      <p className="text-[10px] font-bold tracking-widest uppercase text-gold mb-2">{tag}</p>
-      <h3 className="font-display text-base md:text-lg font-medium tracking-tight mb-3 text-surface-primary">{punch}</h3>
-      <p className="text-[10px] font-bold tracking-widest uppercase text-gold/80">SHOW ME →</p>
+    <a href={href} className={`group block rounded-xl p-4 no-underline transition-all hover:-translate-y-0.5 ${highlight ? 'bg-gold/[0.06] border-2 border-gold/40' : 'bg-navy-800 border border-surface-border hover:border-gold/30'}`}>
+      <p className="text-[9px] font-bold tracking-widest uppercase text-gold/80 mb-1.5">{tag}</p>
+      <p className="text-[13px] text-surface-primary mb-2 leading-snug">{punch}</p>
+      <p className="text-[10px] text-gold font-bold tracking-wider">SHOW ME HOW →</p>
     </a>
   );
 }
 
-function Node({ label, highlight }) {
-  return (
-    <div className={`text-[10px] font-medium text-center px-3 py-2 rounded-lg border ${highlight ? 'bg-gold/15 border-gold/30 text-gold' : 'bg-navy-950 border-surface-border text-surface-secondary'}`}>
-      {label}
-    </div>
-  );
-}
-
-function Arrow() { return <span className="text-gold/40 text-sm hidden md:inline">→</span>; }
-
 function EcoCard({ tag, name, desc, href, external, here }) {
-  const isExt = external;
+  const externalProps = external ? { target: '_blank', rel: 'noopener noreferrer' } : {};
   return (
-    <a href={href} target={isExt ? '_blank' : undefined} rel={isExt ? 'noopener noreferrer' : undefined}
-      className={`block bg-navy-800 border rounded-2xl p-4 transition-all no-underline relative overflow-hidden ${here ? 'border-gold/30' : 'border-surface-border hover:border-gold/20'}`}>
-      {here && <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-gold to-transparent" />}
-      <p className="text-[9px] font-bold tracking-widest uppercase text-gold/70 mb-1">{tag}</p>
-      <p className={`font-mono text-[11px] mb-1.5 ${here ? 'text-gold' : 'text-surface-primary'}`}>
-        {name}{isExt && <span className="text-gold/60 ml-1">↗</span>}
-      </p>
-      <p className="text-[10px] text-surface-secondary leading-relaxed">{desc}</p>
+    <a href={href} {...externalProps} className={`block rounded-2xl p-4 no-underline ${here ? 'bg-gold/[0.06] border-2 border-gold/40' : 'bg-navy-800 border border-gold/15 hover:border-gold/35'} transition-colors`}>
+      <p className={`text-[9px] font-bold tracking-widest uppercase mb-2 ${here ? 'text-gold' : 'text-gold/70'}`}>{tag}</p>
+      <p className={`font-display text-sm font-medium mb-1.5 ${here ? 'text-gold' : 'text-surface-primary'}`}>{name}</p>
+      <p className="text-[11px] text-surface-secondary leading-relaxed">{desc}</p>
     </a>
   );
 }

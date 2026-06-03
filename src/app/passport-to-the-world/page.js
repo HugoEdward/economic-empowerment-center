@@ -11,7 +11,7 @@ export default function Page() {
       <AudienceHero
         tag="Passport to the World"
         title={<>Travel around <em className="text-gold italic">the world.</em></>}
-        subtitle="A participation and discovery experience connecting travelers, members, cities, organizations, merchants, and cultural pavilions across the global Economic Empowerment ecosystem."
+        subtitle="We help people discover the world — and help cities welcome them."
       />
 
       <AudienceSection label="Who Is This For?" title={<>Travelers, members, and <em className="text-gold italic">curious participants.</em></>}>
