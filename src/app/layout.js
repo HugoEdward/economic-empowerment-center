@@ -42,8 +42,11 @@ export default function RootLayout({ children }) {
         <AdvisorPreviewGate>
           <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-2xl bg-navy-950/80 border-b border-surface-border">
             <div className="max-w-7xl mx-auto px-5 h-14 flex items-center justify-between">
-              <a href="/" className="font-display text-lg font-semibold tracking-tight text-surface-primary no-underline">
-                Economic<span className="text-gold ml-1">Empowerment</span>
+              <a href="/" className="no-underline flex items-baseline gap-2">
+                <span className="font-display text-base md:text-lg font-semibold tracking-tight text-surface-primary">
+                  Economic<span className="text-gold ml-1">Empowerment</span>
+                </span>
+                <span className="hidden sm:inline text-[10px] font-mono text-gold/60 tracking-wider border-l border-gold/20 pl-2">S.E.E.D.</span>
               </a>
               <div className="hidden md:flex items-center gap-5">
                 {NAV.map(l => (

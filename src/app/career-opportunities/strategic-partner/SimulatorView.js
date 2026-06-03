@@ -40,7 +40,7 @@ export default function SimulatorView() {
   return (
     <>
       <WhatMustIDo
-        subtitle="Strategic Partner Example"
+        subtitle="Strategic Partner · Engage entire ecosystems with mission impact."
         actions={[
           'Engage 500 organizations across the multicultural ecosystem',
           'Activate strategic presence in 10 cities',

@@ -50,7 +50,7 @@ export default function SimulatorView() {
   return (
     <>
       <WhatMustIDo
-        subtitle="City Coordinator Example"
+        subtitle="City Coordinator · Activate one whole city."
         actions={[
           'Activate 50 Member Organizations in your city',
           'Coordinate 50 Development Officers and 5 Success Liaisons',

@@ -1,10 +1,11 @@
-import { AudienceSection, AudienceProse, CheckList, FeasibilityBlock, ApplyCTA, AudienceHero } from '@/components/AudienceSection';
+import DiscoveryLevels from '@/components/DiscoveryLevels';
 import NeedsMap from '@/components/NeedsMap';
 import { PhaseLegend } from '@/components/PhaseIndicator';
+import { CheckList, FeasibilityBlock, ApplyCTA } from '@/components/AudienceSection';
 
 export const metadata = {
-  title: 'For Member Organizations, Churches & Chambers — Keep Your Mission Alive',
-  description: 'We know what organizations face. We know the 10 most pressing universal needs. Economic Empowerment provides the structured solution for sustainability.',
+  title: 'For Organizations · Churches · Chambers — Keep Your Mission Alive',
+  description: 'We help your organization stay strong — beyond donations, beyond grant cycles. Discover how, step by step.',
 };
 
 const TOP_10_NEEDS = [
@@ -22,97 +23,99 @@ const TOP_10_NEEDS = [
 
 export default function Page() {
   return (
-    <>
-      <AudienceHero
-        tag="For Member Organizations · Churches · Chambers"
-        title={<>Keep your mission alive. <em className="text-gold italic">Strengthen your organization.</em></>}
-        subtitle="We help your organization stay strong — beyond donations, beyond grant cycles."
-      />
+    <DiscoveryLevels levels={[
+      // LEVEL 1 — ONE SCREEN. One promise. One button.
+      {
+        label: 'For Organizations · Churches · Chambers',
+        title: <>Keep your mission alive. <em className="text-gold italic">Stay strong.</em></>,
+        summary: 'We help your organization stay strong — beyond donations, beyond grant cycles.',
+        cta: 'Show Me How',
+      },
 
-      <AudienceSection label="We Know What You Face">
-        <AudienceProse>
-          <p className="text-center"><strong className="text-surface-primary text-base">We know your needs.</strong></p>
-          <p>Here are the <strong className="text-surface-primary">10 most pressing, universal needs</strong> that all types of organizations face worldwide — socio-cultural, professional, youth, NGOs, sports clubs, community groups, advocacy groups. These are the core structural pressures that never go away.</p>
-          <p>For each one, Economic Empowerment offers a structured response — not a slogan.</p>
-        </AudienceProse>
-      </AudienceSection>
-
-      <AudienceSection label="Top 10 Pressing Needs · And How EEC Addresses Each" dark>
-        <div className="mb-6"><PhaseLegend /></div>
-        <NeedsMap needs={TOP_10_NEEDS} />
-      </AudienceSection>
-
-      <AudienceSection label="What Economic Empowerment Provides">
-        <AudienceProse>
-          <p>Most organizations struggle because they depend almost entirely on donations, volunteers, and occasional fundraising. Economic Empowerment offers a different foundation:</p>
-        </AudienceProse>
-        <div className="mt-5">
+      // LEVEL 2 — Three bullets. The simplest possible explanation.
+      {
+        label: 'How',
+        title: 'Three ways we help.',
+        content: (
           <CheckList items={[
-            'A Sustainable Monthly Revenue Development Program tailored to your organization',
-            'A dedicated, exclusive, and paid Development Officer assigned to support you',
-            'Consistent, joint focus on raising the funds your mission requires',
-            'Membership growth and retention through structured engagement',
-            'Meaningful member benefits delivered through MundusPASS',
-            'Increased visibility through the cultural and immigrant ecosystem',
-            'Connection to merchants and professionals who serve your community',
-            'Participation in a larger cooperative ecosystem with shared resources',
-            'Access to UN conferences (Global Forum on Migration and Development; International Cultures Conference)',
-            'Yearly participation in selecting your UN Official Representative before ECOSOC',
-            'Support for your organization\'s permanent physical headquarters',
-            'Facilitation: skilled volunteers · staff · leadership · governance · compliance · grant management · marketing · technology · financial management · partnerships · advocacy · conflict resolution · burnout prevention · youth engagement · long-term sustainability',
+            'Grow your members and merchants — through MundusPASS',
+            'Make you visible — through the Parade, Cultures Celebration, the UN',
+            'Build sustainable monthly income — beyond grants and donations',
           ]} />
-        </div>
-        <div className="mt-7 max-w-3xl mx-auto bg-gold/[0.06] border border-gold/25 rounded-2xl p-6 text-center relative overflow-hidden">
-          <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-gold to-transparent" />
-          <p className="text-[13px] text-surface-primary leading-relaxed font-display italic">
-            "Economic Empowerment's objective is not to replace your mission. It is to <strong className="text-gold not-italic">STRENGTHEN IT.</strong>"
-          </p>
-        </div>
-      </AudienceSection>
+        ),
+        cta: 'Show Me What That Looks Like',
+      },
 
-      <AudienceSection label="What Must I Do?" dark>
-        <CheckList items={[
-          'Maintain an active organization with governance and reporting',
-          'Encourage member participation in the ecosystem',
-          'Activate member benefits through MundusPASS',
-          'Engage local merchants and professionals serving your members',
-          'Participate in community and cultural initiatives',
-          'Authorize a Development Officer to support sustained activation',
-          'Build long-term sustainability through structured income, not single-grant dependence',
-        ]} />
-      </AudienceSection>
+      // LEVEL 3 — What this looks like in practice.
+      {
+        label: 'In Practice',
+        title: <>What does it <em className="text-gold italic">look like for you?</em></>,
+        content: (
+          <div className="grid md:grid-cols-2 gap-3 max-w-3xl mx-auto">
+            <div className="bg-navy-800 border border-gold/15 rounded-2xl p-5">
+              <p className="text-[10px] font-bold tracking-widest uppercase text-gold mb-2">Your Members</p>
+              <p className="text-[13px] text-surface-secondary leading-relaxed">Receive real discounts and bonuses through MundusPASS at local merchants. Your value to them grows beyond your annual dues.</p>
+            </div>
+            <div className="bg-navy-800 border border-gold/15 rounded-2xl p-5">
+              <p className="text-[10px] font-bold tracking-widest uppercase text-gold mb-2">Your Merchants</p>
+              <p className="text-[13px] text-surface-secondary leading-relaxed">Local restaurants, professionals, and service providers register as MundusPASS partners. They reach your members; your members get value.</p>
+            </div>
+            <div className="bg-navy-800 border border-gold/15 rounded-2xl p-5">
+              <p className="text-[10px] font-bold tracking-widest uppercase text-gold mb-2">Your Sponsors</p>
+              <p className="text-[13px] text-surface-secondary leading-relaxed">Engage with concrete community-impact metrics. Real visibility, measurable engagement, sustained partnerships.</p>
+            </div>
+            <div className="bg-navy-800 border border-gold/15 rounded-2xl p-5">
+              <p className="text-[10px] font-bold tracking-widest uppercase text-gold mb-2">Your Visibility</p>
+              <p className="text-[13px] text-surface-secondary leading-relaxed">International Cultures–Immigrants Parade (41 annual editions). International Cultures Conference at the UN. 1City.VIP in your city. Passport to the World.</p>
+            </div>
+          </div>
+        ),
+        cta: 'Show Me The 10 Needs We Solve',
+      },
 
-      <AudienceSection label="What Does Success Look Like?">
-        <CheckList items={[
-          'Sustained monthly revenue independent of single-grant cycles',
-          'Active members participating in MundusPASS ecosystem benefits',
-          'Local merchant network serving your members',
-          'Strong member retention through real value delivery',
-          'Engaged sponsors and community partners on a sustained basis',
-          'Participation in cultural events and UN programs',
-          'A stronger mission with the resources to deliver it',
-        ]} />
-      </AudienceSection>
+      // LEVEL 4 — The full Top 10 Needs framework.
+      {
+        label: 'We Know Your Needs',
+        title: <>The 10 universal needs · <em className="text-gold italic">and our response.</em></>,
+        summary: 'These are the structural pressures every organization faces. Each one has a concrete response — marked with how soon you can expect it.',
+        content: (
+          <>
+            <div className="mb-6"><PhaseLegend /></div>
+            <NeedsMap needs={TOP_10_NEEDS} />
+          </>
+        ),
+        cta: 'Show Me The Feasibility',
+      },
 
-      <AudienceSection label="Show Me the Feasibility" dark>
-        <FeasibilityBlock items={[
-          { value:'~1,000', label:'Active Members' },
-          { value:'~50', label:'Local Merchants' },
-          { value:'$20', label:'Monthly Dues' },
-          { value:'Sustainable', label:'Revenue Floor' },
-        ]} />
-        <p className="text-[12px] text-surface-secondary text-center mt-5 max-w-2xl mx-auto">
-          A fully activated organization with ~1,000 members and ~50 participating merchants generates significant ecosystem activity. Smaller organizations scale proportionally smaller; larger organizations scale up. Outcomes depend on member retention, merchant participation, sponsor engagement, and program compliance.
-        </p>
-      </AudienceSection>
-
-      <AudienceSection label="Apply for Consideration">
-        <ApplyCTA href="/apply/member-organization/" label="Apply as Member Organization" />
-        <p className="text-[11px] text-surface-secondary text-center mt-5">
-          Faith organizations: see also <a href="/for-churches/" className="text-gold no-underline hover:underline">/for-churches/ →</a><br/>
-          Chambers of Commerce: see also <a href="/for-chambers/" className="text-gold no-underline hover:underline">/for-chambers/ →</a>
-        </p>
-      </AudienceSection>
-    </>
+      // LEVEL 5 — Feasibility numbers + apply.
+      {
+        label: 'Feasibility · Ready to Apply',
+        title: <>Real numbers. <em className="text-gold italic">Real next step.</em></>,
+        content: (
+          <>
+            <FeasibilityBlock items={[
+              { value:'~1,000', label:'Active Members' },
+              { value:'~50', label:'Local Merchants' },
+              { value:'$20', label:'Monthly Dues' },
+              { value:'Sustainable', label:'Revenue Floor' },
+            ]} />
+            <p className="text-[12px] text-surface-secondary text-center mt-5 max-w-2xl mx-auto mb-7">
+              A fully activated organization with ~1,000 members and ~50 participating merchants generates significant ecosystem activity. Smaller and larger organizations scale proportionally.
+            </p>
+            <div className="max-w-3xl mx-auto bg-gold/[0.06] border-2 border-gold/30 rounded-2xl p-6 text-center relative overflow-hidden">
+              <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-gold to-transparent" />
+              <p className="text-[14px] text-surface-primary leading-relaxed font-display italic mb-6">
+                "Economic Empowerment's objective is not to replace your mission. It is to <strong className="text-gold not-italic">STRENGTHEN IT.</strong>"
+              </p>
+              <ApplyCTA href="/apply/member-organization/" label="Apply for Consideration" />
+            </div>
+            <p className="text-[11px] text-surface-secondary text-center mt-7">
+              Faith organizations: see also <a href="/for-churches/" className="text-gold no-underline hover:underline">/for-churches/ →</a><br/>
+              Chambers of Commerce: see also <a href="/for-chambers/" className="text-gold no-underline hover:underline">/for-chambers/ →</a>
+            </p>
+          </>
+        ),
+      },
+    ]} />
   );
 }

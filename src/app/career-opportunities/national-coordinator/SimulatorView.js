@@ -52,7 +52,7 @@ export default function SimulatorView() {
   return (
     <>
       <WhatMustIDo
-        subtitle="National Coordinator Example"
+        subtitle="National Coordinator · Activate a nation across states and cities."
         actions={[
           'Activate 5 states/provinces and 25 cities country-wide',
           'Mentor 5 State Coordinators and the full coordinator network',

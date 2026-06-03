@@ -168,16 +168,16 @@ export default function Diagnostic() {
     return (
       <section className="py-20 px-5 text-center">
         <div className="max-w-2xl mx-auto">
-          <p className="section-label justify-center mb-4">Organizational Needs Assessment</p>
+          <p className="section-label justify-center mb-4">Discover Your Pathway</p>
           <h1 className="font-display text-3xl md:text-5xl font-medium tracking-tight leading-tight mb-5">
-            We can guide you. <em className="text-gold italic">Start here.</em>
+            Show us where you are. <em className="text-gold italic">We\'ll reveal your pathway.</em>
           </h1>
           <p className="text-[14px] text-surface-secondary leading-relaxed mb-8">
             You don't need to read the entire site to find where you belong. Answer four short questions,
             and we'll show you the programs, opportunities, and next steps that match your organization.
           </p>
-          <button onClick={() => setStep(1)} className="btn-gold inline-block">Begin Assessment →</button>
-          <p className="text-[11px] text-surface-muted mt-5 italic">Takes about 60 seconds. No personal data collected.</p>
+          <button onClick={() => setStep(1)} className="btn-gold inline-block">Begin Discovery →</button>
+          <p className="text-[11px] text-surface-muted mt-5 italic">About 60 seconds. No personal data collected. Pure discovery.</p>
         </div>
       </section>
     );
@@ -185,10 +185,10 @@ export default function Diagnostic() {
 
   if (step >= 1 && step <= 4) {
     const questions = [
-      { num:1, key:'challenge', q:'What is your greatest challenge today?', options:CHALLENGES, render:o => o.label },
-      { num:2, key:'orgType',   q:'What type of organization are you?',     options:ORG_TYPES,  render:o => o.label },
-      { num:3, key:'size',      q:'What is your organization size?',         options:SIZES,      render:o => <><span>{o.label}</span><span className="text-[10px] text-surface-muted block mt-1">{o.desc}</span></> },
-      { num:4, key:'goal',      q:'What is your biggest goal?',              options:GOALS,      render:o => o.label },
+      { num:1, key:'challenge', q:'Tell us your challenge.', options:CHALLENGES, render:o => o.label },
+      { num:2, key:'orgType',   q:'Help us understand your organization.',     options:ORG_TYPES,  render:o => o.label },
+      { num:3, key:'size',      q:'Show us your scale.',         options:SIZES,      render:o => <><span>{o.label}</span><span className="text-[10px] text-surface-muted block mt-1">{o.desc}</span></> },
+      { num:4, key:'goal',      q:'Show us your goal.',              options:GOALS,      render:o => o.label },
     ];
     const cur = questions[step - 1];
 

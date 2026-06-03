@@ -49,7 +49,7 @@ export default function SimulatorView() {
   return (
     <>
       <WhatMustIDo
-        subtitle="Development Officer Example"
+        subtitle="Development Officer · Help one organization become stronger."
         actions={[
           'Support 1 active Member Organization',
           'Help maintain approximately 1,000 active members',

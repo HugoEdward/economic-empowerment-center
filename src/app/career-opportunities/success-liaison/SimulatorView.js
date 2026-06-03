@@ -42,7 +42,7 @@ export default function SimulatorView() {
   return (
     <>
       <WhatMustIDo
-        subtitle="Success Liaison Example"
+        subtitle="Success Liaison · Help ten organizations sustain their growth."
         actions={[
           'Support a portfolio of 10 active Member Organizations',
           'Coordinate with 10 Development Officers across the portfolio',

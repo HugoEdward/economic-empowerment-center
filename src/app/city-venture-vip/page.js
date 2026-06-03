@@ -1,140 +1,30 @@
-import WhatMustIDo from '@/components/WhatMustIDo';
+import DiscoveryLevels from '@/components/DiscoveryLevels';
+import { CheckList, FeasibilityBlock, ApplyCTA } from '@/components/AudienceSection';
 
-export const metadata = { title: 'City Venture VIP — 1City.VIP Activation' };
+export const metadata = { title:'Cities · 1City.VIP — Activate Your City', description:'We help cities grow.' };
 
 const STEPS = [
-  { num:'01', title:'Apply for Consideration', desc:'Complete your Request for Recognition for the city you wish to activate.' },
-  { num:'02', title:'Become Recognized', desc:'After review, you become eligible to begin city activation.' },
-  { num:'03', title:'Activate the City', desc:'Your recognized entity becomes the activation anchor for the city.' },
-  { num:'04', title:'Identify Merchants', desc:'Begin identifying local restaurants, retailers, service providers, and hospitality.' },
-  { num:'05', title:'Identify Professionals', desc:'Identify lawyers, doctors, accountants, real-estate, and trusted professional services.' },
-  { num:'06', title:'Build City Participation', desc:'Activate members, merchants, sponsors, events, and visitor pathways.' },
-  { num:'07', title:'Start Earning $ustainable Income', desc:'Sustainable income depends on activation, participation, compliance, and program rules. No income is guaranteed.', final:true },
+  { num:1, t:'Identify City Assets', d:'Population, human resources, social/religious/sportive clubs, cultural and professional organizations.' },
+  { num:2, t:'Identify City Needs', d:'Park maintenance, youth development, tourism, senior services, cultural development.' },
+  { num:3, t:'Identify Organizations', d:'Recognized member organizations operating in your city.' },
+  { num:4, t:'Identify Merchants', d:'Local restaurants, retailers, hospitality, professionals serving the community.' },
+  { num:5, t:'Identify Tourism Opportunities', d:'Cultural venues, pavilions, visitor pathways, Passport to the World participation.' },
+  { num:6, t:'Activate Participation', d:'Member organizations onboard, merchants register, tourism activates.' },
+  { num:7, t:'Develop 1City.VIP', d:'Launch your dedicated city portal — Newark.1City.VIP, Copacabana.VIP, etc.' },
 ];
 
-const ACTIVE_CITIES = [
-  { name:'Kuala_Lumpur.1City.VIP', flag:'🇲🇾', country:'Malaysia', focus:'Cultural tourism, hospitality, restaurants' },
-  { name:'Atlantic.1City.VIP', flag:'🇺🇸', country:'United States', focus:'Coastal hospitality, entertainment, tourism' },
-  { name:'Newark.1City.VIP', flag:'🇺🇸', country:'United States', focus:'Urban professionals, community business' },
-  { name:'Copacabana.VIP', flag:'🇧🇷', country:'Brazil', focus:'Beach hospitality, tourism, cultural events' },
-];
-
-export default function CityVentureVIPPage() {
+export default function Page() {
   return (
-    <>
-      <WhatMustIDo
-        subtitle="City Venture VIP Example"
-        actions={[
-          'Apply for Consideration with your recognized entity or organization',
-          'Become recognized as the activation anchor for your city',
-          'Identify and engage local restaurants, retailers, and hospitality',
-          'Identify professionals: lawyers, doctors, accountants, real-estate',
-          'Activate Member Organizations operating in the city',
-          'Build merchant participation through MundusPASS',
-          'Coordinate Passport to the World visitor pathways',
-          'Develop city sponsor and tourism board relationships',
-          'Build sustained city-wide ecosystem activity',
-          'Sustainable income depends on activation, participation, compliance, and program rules',
-        ]}
-        represents={[
-          '1 Activated City',
-          'Local Merchants & Professionals',
-          'Member Organizations Engaged',
-          '1City.VIP Subdomain',
-        ]}
-        pathway="City activation → 1City.VIP recognition → sustainable revenue"
-        transition="SEE THE 7-STEP CITY ACTIVATION PATHWAY"
-      />
-      {/* HERO */}
-      <section className="relative pt-12 pb-12 px-5 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-navy-800/50 via-navy-950 to-navy-950 pointer-events-none" />
-        <div className="absolute top-[-10%] right-[-10%] w-[700px] h-[700px] rounded-full bg-gold/[0.04] blur-3xl pointer-events-none" />
-        <div className="relative z-10 max-w-4xl mx-auto text-center animate-fade-up">
-          <p className="section-label justify-center mb-4">City Venture VIP</p>
-          <h1 className="font-display text-[2.4rem] md:text-[3.4rem] font-medium leading-[1.05] tracking-tight mb-4">
-            Activate <em className="text-gold italic">your city.</em>
-          </h1>
-          <p className="text-base text-surface-secondary leading-relaxed max-w-2xl mx-auto mb-6">
-            1City.VIP helps activate local restaurants, entertainment venues, hospitality providers, merchants,
-            professionals, tourism organizations, and visitors through city-focused participation pathways.
-          </p>
-          <p className="text-[10px] text-gold tracking-widest uppercase">Official Economic Empowerment ecosystem asset</p>
-        </div>
-      </section>
-
-      {/* CITY NOT YET IN 1CITY.VIP MESSAGE */}
-      <section className="py-10 px-5">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-navy-800 border border-gold/15 rounded-2xl p-7 relative overflow-hidden">
-            <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-gold to-transparent" />
-            <div className="text-center mb-2">
-              <p className="text-[10px] font-bold tracking-widest uppercase text-gold mb-2">If your city does not yet exist in 1City.VIP</p>
-              <h2 className="font-display text-2xl md:text-3xl font-medium">A clear pathway awaits.</h2>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 7 STEPS */}
-      <section className="py-6 px-5">
-        <div className="max-w-4xl mx-auto space-y-3">
-          {STEPS.map(s => (
-            <div key={s.num} className={`bg-navy-800 border rounded-xl px-5 py-4 ${s.final ? 'border-gold/30' : 'border-surface-border'} relative overflow-hidden`}>
-              {s.final && <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-gold to-transparent" />}
-              <div className="grid grid-cols-[50px_1fr] gap-4 items-center">
-                <p className="font-display text-2xl text-gold/40 leading-none">{s.num}</p>
-                <div>
-                  <h3 className="text-base font-medium mb-1">{s.title}</h3>
-                  <p className="text-[12px] text-surface-secondary leading-relaxed">{s.desc}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-        <p className="text-[10px] text-surface-muted text-center mt-6 max-w-2xl mx-auto">
-          City participation begins by organizing local participation and business activation.
-          Income is illustrative only and depends on activation, participation, compliance, and program rules.
-        </p>
-      </section>
-
-      {/* ACTIVE CITIES */}
-      <section className="py-14 px-5 bg-navy-900">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-8">
-            <p className="section-label justify-center">Currently Activating</p>
-            <h2 className="font-display text-2xl md:text-3xl font-medium tracking-tight">
-              Cities <em className="text-gold italic">in motion.</em>
-            </h2>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
-            {ACTIVE_CITIES.map(c => (
-              <div key={c.name} className="bg-navy-800 border border-surface-border rounded-xl p-4 hover:border-gold/30 transition-colors">
-                <p className="text-3xl mb-2">{c.flag}</p>
-                <p className="text-xs font-mono text-gold mb-1 break-all">{c.name}</p>
-                <p className="text-[10px] text-surface-muted mb-2">{c.country}</p>
-                <p className="text-[10px] text-surface-secondary leading-snug">{c.focus}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-14 px-5">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="font-display text-2xl md:text-3xl font-medium tracking-tight mb-4">
-            Ready to activate your city?
-          </h2>
-          <p className="text-sm text-surface-secondary mb-6">
-            Qualified entrepreneurs and organizations may apply for consideration.
-          </p>
-          <div className="flex flex-wrap justify-center gap-3">
-            <a href="/apply/entrepreneur/" className="btn-gold">Entrepreneur Application</a>
-            <a href="/apply/member-organization/" className="btn-outline">Organization Application</a>
-          </div>
-        </div>
-      </section>
-    </>
+    <DiscoveryLevels levels={[
+      { label:'Cities · 1City.VIP', title:<>Activate <em className="text-gold italic">your city.</em></>, summary:'We help cities grow — through 7 simple steps.', cta:'Show Me The 7 Steps' },
+      { label:'The 7 Steps · Part 1', title:'First three steps.', content:(<div className="space-y-2 max-w-3xl mx-auto">{STEPS.slice(0,3).map(s=>(<div key={s.num} className="bg-navy-800 border border-gold/15 rounded-xl p-4 flex gap-4"><div className="flex-shrink-0 w-10 h-10 rounded-full bg-gold/15 border border-gold/30 flex items-center justify-center font-display text-base text-gold">0{s.num}</div><div><p className="text-[13px] font-medium text-surface-primary mb-1">{s.t}</p><p className="text-[11px] text-surface-secondary leading-relaxed">{s.d}</p></div></div>))}</div>), cta:'Show Me The Next Steps' },
+      { label:'The 7 Steps · Part 2', title:'Steps four through seven.', content:(<div className="space-y-2 max-w-3xl mx-auto">{STEPS.slice(3).map(s=>(<div key={s.num} className="bg-navy-800 border border-gold/15 rounded-xl p-4 flex gap-4"><div className="flex-shrink-0 w-10 h-10 rounded-full bg-gold/15 border border-gold/30 flex items-center justify-center font-display text-base text-gold">0{s.num}</div><div><p className="text-[13px] font-medium text-surface-primary mb-1">{s.t}</p><p className="text-[11px] text-surface-secondary leading-relaxed">{s.d}</p></div></div>))}</div>), cta:'Show Me Existing City Portals' },
+      { label:'Existing Cities', title:<>Cities already <em className="text-gold italic">activating.</em></>, content:(<div className="flex flex-wrap justify-center gap-2 max-w-2xl mx-auto"><span className="text-[12px] font-mono bg-navy-800 border border-gold/15 rounded-full px-4 py-2 text-gold">Kuala_Lumpur.1City.VIP</span><span className="text-[12px] font-mono bg-navy-800 border border-gold/15 rounded-full px-4 py-2 text-gold">Atlantic.1City.VIP</span><span className="text-[12px] font-mono bg-navy-800 border border-gold/15 rounded-full px-4 py-2 text-gold">Newark.1City.VIP</span><span className="text-[12px] font-mono bg-navy-800 border border-gold/15 rounded-full px-4 py-2 text-gold">Copacabana.VIP</span></div>), cta:'Show Me The Feasibility' },
+      { label:'Feasibility · Apply', title:<>Real numbers. <em className="text-gold italic">Real next step.</em></>, content:(<>
+        <FeasibilityBlock items={[{value:'50',label:'Organizations'},{value:'2,500',label:'Merchants'},{value:'1City.VIP',label:'Subdomain'},{value:'Citywide',label:'Activation'}]} />
+        <p className="text-[12px] text-surface-secondary text-center mt-5 max-w-2xl mx-auto mb-7">A fully activated city ecosystem coordinates 50 organizations, 2,500 merchants, restaurants, hospitality, tourism, and Passport visitors.</p>
+        <div className="max-w-3xl mx-auto bg-gold/[0.06] border-2 border-gold/30 rounded-2xl p-6 text-center"><ApplyCTA href="/apply/" label="Apply for Consideration" /></div>
+      </>) },
+    ]} />
   );
 }

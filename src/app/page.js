@@ -1,5 +1,6 @@
 import OpportunityTable from '@/components/OpportunityTable';
 import FounderTrustBlock from '@/components/FounderTrustBlock';
+import EcosystemMap from '@/components/EcosystemMap';
 
 export const metadata = {
   title: 'Economic Empowerment Center — We help people, organizations, and cities grow stronger together',
@@ -50,44 +51,21 @@ export default function Home() {
         </div>
       </section>
 
-      {/* THE BRIDGE */}
+      {/* THE ECOSYSTEM MAP */}
       <section className="py-14 px-5 bg-navy-900">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-9">
-            <p className="section-label justify-center mb-3">How It Connects</p>
+            <p className="section-label justify-center mb-3">The Whole Ecosystem · At A Glance</p>
             <h2 className="font-display text-2xl md:text-3xl font-medium tracking-tight">
-              We are the bridge that <em className="text-gold italic">connects everyone.</em>
+              How everything <em className="text-gold italic">connects.</em>
             </h2>
           </div>
 
-          <div className="grid grid-cols-2 gap-3 max-w-2xl mx-auto mb-2">
-            <BridgePartner name="Cultures Celebration" tag="The World Comes Together" />
-            <BridgePartner name="Immigrants Alliance" tag="Communities United" />
-          </div>
-
-          <div className="relative max-w-3xl mx-auto h-12 mb-2 flex items-center" aria-hidden>
-            <div className="absolute inset-x-[16%] top-1/2 -translate-y-1/2 h-px bg-gradient-to-r from-gold/10 via-gold/40 to-gold/10" />
-            <div className="absolute left-[16%] top-1/2 -translate-y-1/2 w-px h-6 bg-gold/30" />
-            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-px h-6 bg-gold/30" />
-            <div className="absolute right-[16%] top-1/2 -translate-y-1/2 w-px h-6 bg-gold/30" />
-          </div>
-
-          <div className="grid grid-cols-3 gap-3 max-w-3xl mx-auto">
-            <BridgePillar label="Organizations" sub="need support" href="/for-organizations/" />
-            <BridgePillar label="Connectors" sub="bring people together" href="/career-opportunities/" center />
-            <BridgePillar label="Businesses" sub="offer value" href="/for-merchants/" />
-          </div>
-
-          <div className="max-w-2xl mx-auto mt-9 space-y-1.5 text-center">
-            <p className="text-[13px] text-surface-secondary">Organizations need support.</p>
-            <p className="text-[13px] text-surface-secondary">Businesses offer value.</p>
-            <p className="text-[13px] text-surface-secondary">Connectors bring people together.</p>
-            <p className="text-[14px] text-surface-primary font-medium mt-3">Economic Empowerment Center helps everyone grow.</p>
-          </div>
+          <EcosystemMap />
 
           <div className="text-center mt-8">
             <a href="/organizational-needs-assessment/" className="text-[11px] text-gold no-underline hover:underline">
-              ↪ Not sure where to start? Take the 60-second Needs Assessment →
+              ↪ Not sure where you fit? Discover your pathway in 60 seconds →
             </a>
           </div>
         </div>

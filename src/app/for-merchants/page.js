@@ -1,60 +1,43 @@
-import { AudienceSection, AudienceProse, CheckList, ExampleBox, FeasibilityBlock, ApplyCTA, AudienceHero } from '@/components/AudienceSection';
+import DiscoveryLevels from '@/components/DiscoveryLevels';
+import { CheckList, ExampleBox, FeasibilityBlock, ApplyCTA } from '@/components/AudienceSection';
 
 export const metadata = {
-  title: 'For Merchants & Professionals — Reach Organized Customers',
-  description: 'Pathway for businesses and professionals to reach organized member audiences through approved member benefits in the MundusPASS network.',
+  title: 'For Businesses & Professionals — Reach New Customers',
+  description: 'We help your business reach new, organized customers. Discover how, step by step.',
 };
 
 export default function Page() {
   return (
-    <>
-      <AudienceHero
-        tag="For Merchants & Professionals"
-        title={<>Reach <em className="text-gold italic">organized customers.</em></>}
-        subtitle="We help your business reach new, organized customers across your city and beyond."
-      />
+    <DiscoveryLevels levels={[
+      // LEVEL 1
+      {
+        label: 'For Businesses & Professionals',
+        title: <>Reach <em className="text-gold italic">new customers.</em></>,
+        summary: 'We help your business reach new, organized customers across your city and beyond.',
+        cta: 'Show Me How',
+      },
 
-      <AudienceSection label="Who Is This For?" title={<>Businesses and <em className="text-gold italic">licensed professionals.</em></>}>
-        <AudienceProse>
-          <p>This pathway is for established businesses and licensed professionals who want to participate in the MundusPASS network:</p>
-        </AudienceProse>
-        <div className="mt-5">
+      // LEVEL 2 — Three bullets
+      {
+        label: 'How',
+        title: 'Three things you do.',
+        content: (
           <CheckList items={[
-            'Restaurants, cafes, food trucks, and hospitality venues',
-            'Retail stores — clothing, groceries, books, electronics, gifts',
-            'Service businesses — repair, cleaning, beauty, fitness, wellness',
-            'Licensed professionals — lawyers, accountants, doctors, dentists, real estate',
-            'Trades — contractors, plumbers, electricians, mechanics',
-            'Tourism and travel services',
-            'Professional consultants and trainers',
+            'Offer a member benefit — discount, bonus, free service, or priority',
+            'Get listed in MundusPASS — visible to organized member audiences',
+            'Honor the benefit when members redeem — repeat engagement compounds',
           ]} />
-        </div>
-      </AudienceSection>
+        ),
+        cta: 'Show Me Example Benefits',
+      },
 
-      <AudienceSection label="What Is It?" dark>
-        <AudienceProse>
-          <p><strong className="text-surface-primary">The Merchant pathway connects your business to organized communities through approved member benefits.</strong></p>
-          <p>Recognized Member Organizations carry MundusPASS for their members. When you become a participating merchant, your business is visible to those organized audiences — pre-qualified, opt-in, and aligned with the communities you already serve.</p>
-        </AudienceProse>
-      </AudienceSection>
-
-      <AudienceSection label="Why Participate?">
-        <CheckList items={[
-          'Reach organized customer audiences instead of building them from scratch',
-          'Build repeat-customer relationships through benefit redemptions',
-          'Differentiate from competitors who don\'t offer organized member value',
-          'Increase visibility in city activation (1City.VIP) and cultural events (ICC)',
-          'Connect with tourism through Passport to the World participation',
-          'Trade short-term discount margin for long-term customer loyalty',
-        ]} />
-      </AudienceSection>
-
-      <AudienceSection label="How Does It Work?" dark>
-        <AudienceProse>
-          <p><strong className="text-surface-primary">You define an approved member benefit and register with MundusPASS.</strong> Members of recognized organizations engage with your benefit, redeem it through MundusPASS, and become part of your repeat-customer base.</p>
-        </AudienceProse>
-        <div className="mt-7">
-          <ExampleBox title="Example Member Benefits" items={[
+      // LEVEL 3 — Example benefits
+      {
+        label: 'Example Member Benefits',
+        title: <>What kind of <em className="text-gold italic">benefit?</em></>,
+        summary: 'Choose what fits your business margins. The right benefit is one you can honor every time without resenting it.',
+        content: (
+          <ExampleBox title="Examples Merchants Offer" items={[
             '10% discount on all services',
             '15% discount on first visit',
             'Free consultation (30 min)',
@@ -66,59 +49,54 @@ export default function Page() {
             'Loyalty stamps faster',
             'Family/group discounts',
           ]} />
-        </div>
-        <p className="text-[11px] text-surface-muted text-center mt-4 italic max-w-2xl mx-auto">
-          Offer what fits your margins. The right benefit is one you can honor consistently, every time, without resenting it.
-        </p>
-      </AudienceSection>
+        ),
+        cta: 'Show Me Who This Is For',
+      },
 
-      <AudienceSection label="What Must I Do?">
-        <CheckList items={[
-          'Submit business registration and licensing documentation',
-          'Provide tax identification (encrypted on submission)',
-          'Verify business operating address',
-          'Provide owner government identification',
-          'Show evidence of active business operations',
-          'Define your approved member benefit',
-          'Pass compliance and ethical conduct review',
-          'Integrate MundusPASS at your point of sale or service',
-          'Honor your member benefit consistently for participating members',
-          'Sustain monthly merchant participation',
-        ]} />
-      </AudienceSection>
-
-      <AudienceSection label="What Does Success Look Like?" dark>
-        <AudienceProse>
-          <p>A successful participating merchant:</p>
-        </AudienceProse>
-        <div className="mt-5">
+      // LEVEL 4 — Who this is for
+      {
+        label: 'Who This Is For',
+        title: <>Is this <em className="text-gold italic">for you?</em></>,
+        content: (
           <CheckList items={[
-            'Has an active, listed member benefit in MundusPASS',
-            'Is reliably honored when members present their MundusPASS',
-            'Maintains positive ratings from member redemptions',
-            'Has a recognizable cluster of repeat-engagement members from local organizations',
-            'Participates in city activation (1City.VIP) when relevant',
-            'Receives referrals from Member Organizations to their members',
-            'Sees compounding revenue from organized community engagement',
+            'Restaurants, cafes, food trucks, and hospitality venues',
+            'Retail stores — clothing, groceries, books, electronics, gifts',
+            'Service businesses — repair, cleaning, beauty, fitness, wellness',
+            'Licensed professionals — lawyers, accountants, doctors, dentists, real estate',
+            'Trades — contractors, plumbers, electricians, mechanics',
+            'Tourism and travel services',
+            'Professional consultants and trainers',
           ]} />
-        </div>
-      </AudienceSection>
+        ),
+        cta: 'Show Me What Success Looks Like',
+      },
 
-      <AudienceSection label="Show Me the Feasibility">
-        <FeasibilityBlock items={[
-          { value:'1', label:'Active Benefit' },
-          { value:'10s-100s', label:'Local Org Members' },
-          { value:'Repeat', label:'Engagement Pattern' },
-          { value:'Variable', label:'Revenue Outcome' },
-        ]} />
-        <p className="text-[12px] text-surface-secondary text-center mt-5 max-w-2xl mx-auto">
-          Merchant outcomes depend on your benefit's appeal, your margins, the recognized organizations near your location, and your ability to honor the benefit consistently. Repeat engagement compounds over time — most successful merchants see growth in months 4–12.
-        </p>
-      </AudienceSection>
-
-      <AudienceSection label="Apply for Consideration" dark>
-        <ApplyCTA href="/apply/merchant/" label="Apply as Merchant / Professional" />
-      </AudienceSection>
-    </>
+      // LEVEL 5 — Success + Apply
+      {
+        label: 'Success · Ready to Apply',
+        title: <>Real results. <em className="text-gold italic">Real next step.</em></>,
+        content: (
+          <>
+            <FeasibilityBlock items={[
+              { value:'1', label:'Active Benefit' },
+              { value:'10s-100s', label:'Local Org Members' },
+              { value:'Repeat', label:'Engagement Pattern' },
+              { value:'Variable', label:'Revenue Outcome' },
+            ]} />
+            <p className="text-[12px] text-surface-secondary text-center mt-5 max-w-2xl mx-auto mb-7">
+              Merchant outcomes depend on your benefit's appeal, your margins, and the recognized organizations near your location. Repeat engagement compounds over time — most successful merchants see growth in months 4–12.
+            </p>
+            <div className="max-w-3xl mx-auto bg-gold/[0.06] border-2 border-gold/30 rounded-2xl p-6 text-center relative overflow-hidden">
+              <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-gold to-transparent" />
+              <p className="text-[10px] font-bold tracking-widest uppercase text-gold mb-3">Apply for Consideration</p>
+              <ApplyCTA href="/apply/merchant/" label="Apply as Merchant / Professional" />
+              <p className="text-[11px] text-surface-secondary mt-5">
+                Individual entrepreneur offering services? See <a href="/for-entrepreneurs/" className="text-gold no-underline hover:underline">/for-entrepreneurs/ →</a>
+              </p>
+            </div>
+          </>
+        ),
+      },
+    ]} />
   );
 }
