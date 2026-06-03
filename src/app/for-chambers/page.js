@@ -1,9 +1,23 @@
 import { AudienceSection, AudienceProse, CheckList, FeasibilityBlock, ApplyCTA, AudienceHero } from '@/components/AudienceSection';
+import NeedsMap from '@/components/NeedsMap';
 
 export const metadata = {
-  title: 'For Chambers of Commerce — New Value for Your Members',
-  description: 'Pathway for Chambers, BIDs, and trade associations to deliver new value to member businesses and activate local economies.',
+  title: 'For Chambers of Commerce — New Value for Members',
+  description: '10 most pressing needs of Chambers worldwide, each with a structured Economic Empowerment Center solution. Give member businesses access to additional visibility, customers, and partnerships.',
 };
+
+const CHAMBER_NEEDS = [
+  { num:1, need:'Sustainable Revenue & Financial Stability', why:'Chambers worldwide struggle with declining dues, rising costs, and unpredictable funding.', solution:'Revenue-generating programs, shared services, sponsorship pathways, grant-readiness support, and monetizable member benefits that stabilize Chamber finances.' },
+  { num:2, need:'Membership Growth & Retention', why:'Chambers must constantly attract new members while keeping existing ones engaged.', solution:'High-value benefits, business support services, training programs, and digital tools that increase both new-member acquisition and renewal rates.' },
+  { num:3, need:'Clear, Modern Value Proposition', why:'Businesses demand measurable ROI; traditional networking alone is no longer enough.', solution:'A ready-made suite of impactful programs, services, and measurable outcomes Chambers can offer immediately — strengthening the value story.' },
+  { num:4, need:'Workforce Development & Talent Pipeline', why:'Businesses everywhere face labor shortages and skill gaps.', solution:'Workforce-readiness programs, employer pipelines, upskilling workshops, and training partnerships Chambers can deploy locally.' },
+  { num:5, need:'Small Business & Entrepreneurship Support', why:'Most Chamber members are small businesses needing hands-on help to survive and grow.', solution:'Coaching, financial literacy, micro-enterprise support, startup tools, and entrepreneurship programs Chambers can offer directly to members.' },
+  { num:6, need:'Advocacy & Government Influence', why:'Chambers must represent business interests but often lack research, data, or policy capacity.', solution:'Policy briefs, economic data, research, and advocacy tools that strengthen Chamber influence with government — including UN ECOSOC participation pathways.' },
+  { num:7, need:'Digital Transformation (Chamber + Members)', why:'Many Chambers and their members lag in technology, automation, and digital marketing.', solution:'Digital training, e-commerce support, modern tech tools, and digital adoption programs for both Chambers and their business members.' },
+  { num:8, need:'Partnerships & Sponsorship Development', why:'Chambers need corporate, government, and nonprofit partners to expand resources and impact.', solution:'Connections to national/global partners, government agencies, funders, and sponsorship opportunities through the ecosystem.' },
+  { num:9, need:'Branding, Marketing & Visibility', why:'Many Chambers struggle with low visibility or outdated public perception.', solution:'Marketing content, communication strategies, campaigns, and co-branding through CulturesCelebration.com, ImmigrantsAlliance.org, and 1City.VIP.' },
+  { num:10, need:'Leadership Capacity & Long-Term Sustainability', why:'Boards, staff, and volunteers often lack training, structure, or succession planning.', solution:'Governance training, board development, leadership coaching, succession planning, and strategic planning tools to strengthen long-term sustainability.' },
+];
 
 export default function Page() {
   return (
@@ -11,80 +25,18 @@ export default function Page() {
       <AudienceHero
         tag="For Chambers of Commerce"
         title={<>New value <em className="text-gold italic">for your members.</em></>}
-        subtitle="A pathway for Chambers of Commerce, Business Improvement Districts, and trade associations to deliver new measurable value to member businesses and activate local economic ecosystems."
+        subtitle="Give member businesses access to additional visibility, customers, partnerships, events, tourism opportunities, cultural initiatives, and participation in a larger economic ecosystem."
       />
 
-      <AudienceSection label="Who Is This For?" title={<>Chambers, BIDs, and <em className="text-gold italic">trade federations.</em></>}>
+      <AudienceSection label="We Know What Chambers Face">
         <AudienceProse>
-          <p>This pathway is for organizations representing a base of member businesses:</p>
-        </AudienceProse>
-        <div className="mt-5">
-          <CheckList items={[
-            'Chambers of Commerce (local, regional, ethnic, multicultural)',
-            'Business Improvement Districts (BIDs)',
-            'Trade associations and industry federations',
-            'Merchant associations and small business coalitions',
-            'Tourism boards and convention/visitor bureaus',
-            'Multicultural and immigrant business federations',
-          ]} />
-        </div>
-      </AudienceSection>
-
-      <AudienceSection label="What Is It?" dark>
-        <AudienceProse>
-          <p><strong className="text-surface-primary">A framework that turns Chamber membership into measurable economic value.</strong></p>
-          <p>Member businesses gain access to organized member audiences through Member Organizations recognized by the ecosystem. The Chamber gains a real, demonstrable value-add that justifies and grows membership — beyond networking events and newsletters.</p>
+          <p className="text-center"><strong className="text-surface-primary text-base">Chambers worldwide face the same 10 pressing structural pressures.</strong></p>
+          <p>From declining dues to digital transformation, from workforce shortages to leadership succession — these are the constant needs that never go away. For each one, Economic Empowerment offers a concrete response.</p>
         </AudienceProse>
       </AudienceSection>
 
-      <AudienceSection label="Why Participate?">
-        <AudienceProse>
-          <p className="text-center"><strong className="text-surface-primary">How Chambers create value for member businesses:</strong></p>
-        </AudienceProse>
-        <div className="mt-3 mb-7">
-          <CheckList items={[
-            'Connect member businesses to organized, opt-in customer bases',
-            'Differentiate Chamber membership through tangible economic value',
-            'Activate cross-promotion between member businesses and community organizations',
-            'Deliver measurable visibility and engagement metrics to members',
-          ]} />
-        </div>
-        <AudienceProse>
-          <p className="text-center"><strong className="text-surface-primary">How merchants gain visibility:</strong></p>
-        </AudienceProse>
-        <div className="mt-3 mb-7">
-          <CheckList items={[
-            'Listed in MundusPASS with their approved member benefits',
-            'Featured at city, cultural, and Passport to the World events',
-            'Reach Member Organizations whose audiences match their target customers',
-            'Build repeat-customer relationships through sustained engagement',
-          ]} />
-        </div>
-        <AudienceProse>
-          <p className="text-center"><strong className="text-surface-primary">How local economies benefit:</strong></p>
-        </AudienceProse>
-        <div className="mt-3">
-          <CheckList items={[
-            'Money flows between local organizations and local businesses, not to outside platforms',
-            'Tourism activity through Passport to the World adds outside revenue',
-            'City activation through 1City.VIP coordinates ecosystem growth',
-            'Cultural events through ICC bring visibility and pride to the city',
-          ]} />
-        </div>
-      </AudienceSection>
-
-      <AudienceSection label="How Does It Work?" dark>
-        <AudienceProse>
-          <p>The Chamber applies for recognition through the S.E.E.D. program with its governing documents and member business roster.</p>
-          <p>Once recognized, the Chamber coordinates with the ecosystem to:</p>
-          <p>
-            <strong className="text-surface-primary">→ Onboard member businesses</strong> as MundusPASS-participating merchants offering approved member benefits.<br/>
-            <strong className="text-surface-primary">→ Connect to local Member Organizations</strong> whose members will engage with member-business benefits.<br/>
-            <strong className="text-surface-primary">→ Coordinate city-level activation</strong> through 1City.VIP — restaurants, hospitality, tourism, retail, professional services.<br/>
-            <strong className="text-surface-primary">→ Participate in cultural programming</strong> through International Cultures Celebration and Passport to the World.<br/>
-            <strong className="text-surface-primary">→ Provide measurable value metrics</strong> back to member businesses — visibility, engagement, redemptions, repeat customers.
-          </p>
-        </AudienceProse>
+      <AudienceSection label="10 Most Pressing Chamber Needs · And How EEC Addresses Each" dark>
+        <NeedsMap needs={CHAMBER_NEEDS} />
       </AudienceSection>
 
       <AudienceSection label="What Must I Do?">
@@ -94,29 +46,24 @@ export default function Page() {
           'Verify Chamber operating address and active status',
           'Designate authorized Chamber officers',
           'Acknowledge S.E.E.D. Rules and federation requirements',
-          'Communicate the program to your member businesses',
-          'Coordinate member business onboarding to MundusPASS',
-          'Facilitate connections to local Member Organizations',
+          'Engage member businesses in the program',
+          'Promote opportunities to your member businesses',
+          'Build local partnerships across organizations and city activation',
+          'Support local commerce through coordinated city programs',
           'Maintain Chamber compliance and reporting standards',
-          'Engage in city-level coordination with 1City.VIP',
         ]} />
       </AudienceSection>
 
       <AudienceSection label="What Does Success Look Like?" dark>
-        <AudienceProse>
-          <p>A successful recognized Chamber:</p>
-        </AudienceProse>
-        <div className="mt-5">
-          <CheckList items={[
-            'Has a meaningful share of member businesses registered as MundusPASS merchants',
-            'Reports tangible engagement metrics to member businesses',
-            'Drives measurable foot traffic and revenue to participating businesses',
-            'Coordinates city-wide activation with 1City.VIP',
-            'Engages member businesses in cultural and tourism programs',
-            'Renews and grows membership through demonstrated value',
-            'Builds reputation as the Chamber that delivers, not just convenes',
-          ]} />
-        </div>
+        <CheckList items={[
+          'A meaningful share of member businesses registered as MundusPASS merchants',
+          'Tangible engagement metrics reported to member businesses',
+          'Measurable foot traffic and revenue driven to participating businesses',
+          'Coordinated city-wide activation through 1City.VIP',
+          'Member-business engagement in cultural and tourism programs',
+          'Renewed and growing membership through demonstrated value',
+          'Reputation as the Chamber that delivers, not just convenes',
+        ]} />
       </AudienceSection>
 
       <AudienceSection label="Show Me the Feasibility">
@@ -127,7 +74,7 @@ export default function Page() {
           { value:'Citywide', label:'1City.VIP Engagement' },
         ]} />
         <p className="text-[12px] text-surface-secondary text-center mt-5 max-w-2xl mx-auto">
-          A 200-member Chamber activating 30–50% of its member businesses as merchants generates significant ecosystem engagement. Larger Chambers scale proportionally. Outcomes depend on member business participation and coordination with local Member Organizations.
+          A 200-member Chamber activating 30–50% of its members as MundusPASS merchants generates significant ecosystem engagement. Larger Chambers scale proportionally.
         </p>
       </AudienceSection>
 

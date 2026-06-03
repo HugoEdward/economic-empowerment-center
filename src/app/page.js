@@ -171,7 +171,7 @@ export default function Home() {
           </div>
 
           <div className="text-center">
-            <a href="/international-cultures-celebration/" className="text-[11px] text-gold no-underline hover:underline">See How They Work Together →</a>
+            <a href="/three-platforms/" className="text-[11px] text-gold no-underline hover:underline">See How The Three Platforms Work Together →</a>
           </div>
         </div>
       </section>
