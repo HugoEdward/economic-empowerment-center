@@ -1,0 +1,91 @@
+{
+  "locale": "en",
+  "name": "English",
+  "dir": "ltr",
+  "nav": {
+    "home": "Home",
+    "organizations": "Organizations",
+    "businesses": "Businesses",
+    "connectors": "Connectors",
+    "cultures": "Cultures",
+    "communities": "Communities",
+    "about": "About",
+    "apply": "Apply for Consideration"
+  },
+  "hero": {
+    "title_a": "We help people, organizations, and cities",
+    "title_b": "grow stronger — together.",
+    "subtitle": "Choose what you want to do."
+  },
+  "cards": {
+    "orgs":      { "title": "ORGANIZATIONS",   "promise": "We help your organization stay strong.",  "cta": "SHOW ME HOW" },
+    "biz":       { "title": "BUSINESSES",      "promise": "We help your business grow.",             "cta": "SHOW ME HOW" },
+    "connectors":{ "title": "CONNECTORS",      "promise": "We help people find opportunities.",      "cta": "SHOW ME HOW" },
+    "cultures":  { "title": "CULTURES",        "promise": "Experience the world.",                   "cta": "EXPLORE" },
+    "communities":{"title": "COMMUNITIES",     "promise": "Building stronger communities.",          "cta": "JOIN US" }
+  },
+  "ecosystem": {
+    "label": "The Whole Ecosystem · At A Glance",
+    "title_a": "How everything",
+    "title_b": "connects.",
+    "center_label": "THE CENTER",
+    "center_full": "Sustainable Economic Empowerment & Development",
+    "sky": {
+      "cultures": "Cultures Celebration",
+      "cultures_desc": "Participation · Visibility · Understanding · Tourism · Cultural Exchange",
+      "immigrants": "Immigrants Alliance",
+      "immigrants_desc": "Community · Representation · Advocacy · Unity"
+    },
+    "ground": {
+      "orgs": "Organizations",
+      "orgs_desc": "become stronger",
+      "connectors": "Connectors",
+      "connectors_desc": "connect opportunities",
+      "providers": "Providers",
+      "providers_desc": "businesses grow"
+    },
+    "discover_link": "↪ Not sure where you fit? Discover your pathway in 60 seconds →"
+  },
+  "phases": {
+    "available_label": "Just Waiting For You!",
+    "available_sub":   "You can benefit immediately.",
+    "activating_label":"Activates With Your Participation",
+    "activating_sub":  "Stronger as members, merchants, sponsors, and partners participate.",
+    "developing_label":"Growing With Your Organization",
+    "developing_sub":  "Built and expanded together with participating organizations, Officers, merchants, and partners."
+  },
+  "diagnostic": {
+    "label": "Discover Your Pathway",
+    "title_a": "Show us where you are.",
+    "title_b": "We'll reveal your pathway.",
+    "intro": "Not a quiz. A journey. Tell us your challenge. Show us your goal. Help us understand your organization. Then we'll reveal your pathway, your opportunities, and your next steps — together.",
+    "begin": "Begin Discovery →",
+    "footer": "About 60 seconds. No personal data collected. Pure discovery."
+  },
+  "buttons": {
+    "show_me_how": "Show Me How",
+    "show_me_more": "Show Me More",
+    "apply_for_consideration": "Apply for Consideration",
+    "discover_more_n_of_m": "Discover more"
+  },
+  "audience_promises": {
+    "orgs":    "Keep your mission alive. Stay strong.",
+    "biz":     "Reach new customers.",
+    "churches":"Strengthen your church.",
+    "chambers":"New value for your members.",
+    "entrep":  "New opportunity in your city.",
+    "sponsors":"Real impact. Real communities.",
+    "cities":  "Activate your city.",
+    "passport":"Travel around the world.",
+    "cultures":"Experience the world.",
+    "career":  "Help your city grow stronger."
+  },
+  "missions": {
+    "dev_officer":        "Help one organization become stronger.",
+    "success_liaison":    "Help ten organizations sustain their growth.",
+    "city_coordinator":   "Activate one whole city.",
+    "state_coordinator":  "Activate a state across five cities.",
+    "national_coordinator":"Activate a nation across states and cities.",
+    "strategic_partner":  "Engage entire ecosystems with mission impact."
+  }
+}

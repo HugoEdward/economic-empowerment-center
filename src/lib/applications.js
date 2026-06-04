@@ -16,7 +16,29 @@ export async function submitApplication(appData, documents = []) {
     if (!ALLOWED_TYPES.includes(doc.file.type)) return { success: false, error: `File "${doc.file.name}" must be PDF, JPG, PNG, or WebP.` };
   }
 
-  const { data: app, error: appError } = await client.from('applications').insert({ ...appData, status: 'submitted', address_verification_status: 'not_checked' }).select('id').single();
+  // v5.1 — Tax ID encryption (security-first per Stripe Activation spec)
+  // If a raw tax_id was captured, encrypt it server-side via the encrypt_tax_id() RPC
+  // and replace the plaintext field with the ciphertext column. The raw value never
+  // touches the applications.tax_id column.
+  const submission = { ...appData };
+  if (submission.tax_id && typeof submission.tax_id === 'string' && submission.tax_id.trim()) {
+    try {
+      const { data: ciphertext, error: encErr } = await client.rpc('encrypt_tax_id', { plaintext: submission.tax_id.trim() });
+      if (encErr) {
+        // Soft-fail: surface the issue but DO NOT submit the plaintext.
+        console.error('Tax ID encryption failed; submitting without tax_id', encErr);
+        delete submission.tax_id;
+      } else {
+        delete submission.tax_id;
+        submission.tax_id_encrypted = ciphertext;
+      }
+    } catch (e) {
+      console.error('Tax ID encryption threw; submitting without tax_id', e);
+      delete submission.tax_id;
+    }
+  }
+
+  const { data: app, error: appError } = await client.from('applications').insert({ ...submission, status: 'submitted', address_verification_status: 'not_checked' }).select('id').single();
   if (appError) {
     if (appError.code === '23505') return { success: false, error: 'An application with this information already exists.' };
     return { success: false, error: 'Failed to submit. Please try again.' };

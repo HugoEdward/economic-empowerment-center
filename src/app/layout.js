@@ -1,6 +1,8 @@
 import './globals.css';
 import AdvisorPreviewGate from '@/components/AdvisorPreviewGate';
 import FeedbackButton from '@/components/FeedbackButton';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
+import { buildHreflang } from '@/lib/i18n';
 
 export const metadata = {
   title: { default: 'Economic Empowerment — Sustainable Revenue & Opportunities', template: '%s | Economic Empowerment' },
@@ -52,6 +54,7 @@ export default function RootLayout({ children }) {
                 {NAV.map(l => (
                   <a key={l.href} href={l.href} className="text-[13px] font-medium text-surface-secondary no-underline hover:text-surface-primary transition-colors">{l.label}</a>
                 ))}
+                <LanguageSwitcher />
                 <a href="/apply/" className="btn-primary !py-1.5 !px-4 !text-xs">Apply for Consideration</a>
               </div>
             </div>

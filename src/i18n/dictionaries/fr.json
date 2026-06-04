@@ -1,0 +1,32 @@
+{
+  "locale":"fr","name":"Français","dir":"ltr",
+  "nav":{"home":"Accueil","organizations":"Organisations","businesses":"Entreprises","connectors":"Connecteurs","cultures":"Cultures","communities":"Communautés","about":"À propos","apply":"Demander une Considération"},
+  "hero":{"title_a":"Nous aidons les personnes, les organisations et les villes","title_b":"à grandir plus fortes — ensemble.","subtitle":"Choisissez ce que vous voulez faire."},
+  "cards":{
+    "orgs":{"title":"ORGANISATIONS","promise":"Nous aidons votre organisation à rester forte.","cta":"MONTREZ-MOI COMMENT"},
+    "biz":{"title":"ENTREPRISES","promise":"Nous aidons votre entreprise à grandir.","cta":"MONTREZ-MOI COMMENT"},
+    "connectors":{"title":"CONNECTEURS","promise":"Nous aidons les gens à trouver des opportunités.","cta":"MONTREZ-MOI COMMENT"},
+    "cultures":{"title":"CULTURES","promise":"Découvrez le monde.","cta":"EXPLORER"},
+    "communities":{"title":"COMMUNAUTÉS","promise":"Construire des communautés plus fortes.","cta":"REJOIGNEZ-NOUS"}
+  },
+  "ecosystem":{
+    "label":"Tout l'Écosystème · En Un Coup d'Œil","title_a":"Comment tout","title_b":"se connecte.",
+    "center_label":"LE CENTRE","center_full":"Autonomisation Économique Durable et Développement",
+    "sky":{"cultures":"Célébration des Cultures","cultures_desc":"Participation · Visibilité · Compréhension · Tourisme · Échange Culturel","immigrants":"Alliance des Immigrants","immigrants_desc":"Communauté · Représentation · Plaidoyer · Unité"},
+    "ground":{"orgs":"Organisations","orgs_desc":"deviennent plus fortes","connectors":"Connecteurs","connectors_desc":"connectent des opportunités","providers":"Prestataires","providers_desc":"entreprises grandissent"},
+    "discover_link":"↪ Vous ne savez pas où vous situer ? Découvrez votre voie en 60 secondes →"
+  },
+  "phases":{
+    "available_label":"Vous Attend Déjà !","available_sub":"Vous pouvez en bénéficier immédiatement.",
+    "activating_label":"S'Active Avec Votre Participation","activating_sub":"Plus forte à mesure que membres, marchands, sponsors et partenaires participent.",
+    "developing_label":"Grandit Avec Votre Organisation","developing_sub":"Construit et étendu avec les organisations, officiers, marchands et partenaires participants."
+  },
+  "diagnostic":{
+    "label":"Découvrez Votre Voie","title_a":"Montrez-nous où vous êtes.","title_b":"Nous révélerons votre voie.",
+    "intro":"Pas un questionnaire. Un voyage. Dites-nous votre défi. Montrez-nous votre objectif. Aidez-nous à comprendre votre organisation. Ensuite nous révélerons votre voie, vos opportunités et vos prochaines étapes — ensemble.",
+    "begin":"Commencer la Découverte →","footer":"Environ 60 secondes. Aucune donnée personnelle collectée. Pure découverte."
+  },
+  "buttons":{"show_me_how":"Montrez-moi Comment","show_me_more":"Montrez-moi Plus","apply_for_consideration":"Demander une Considération","discover_more_n_of_m":"Découvrir plus"},
+  "audience_promises":{"orgs":"Gardez votre mission vivante. Restez forte.","biz":"Atteignez de nouveaux clients.","churches":"Renforcez votre église.","chambers":"Nouvelle valeur pour vos membres.","entrep":"Nouvelle opportunité dans votre ville.","sponsors":"Impact réel. Communautés réelles.","cities":"Activez votre ville.","passport":"Voyagez dans le monde.","cultures":"Découvrez le monde.","career":"Aidez votre ville à grandir plus forte."},
+  "missions":{"dev_officer":"Aidez une organisation à devenir plus forte.","success_liaison":"Aidez dix organisations à soutenir leur croissance.","city_coordinator":"Activez une ville entière.","state_coordinator":"Activez un état à travers cinq villes.","national_coordinator":"Activez une nation à travers états et villes.","strategic_partner":"Engagez des écosystèmes entiers avec un impact de mission."}
+}

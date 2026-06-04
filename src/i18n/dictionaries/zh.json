@@ -1,0 +1,32 @@
+{
+  "locale":"zh","name":"中文","dir":"ltr",
+  "nav":{"home":"首页","organizations":"组织","businesses":"企业","connectors":"连接者","cultures":"文化","communities":"社区","about":"关于","apply":"申请考虑"},
+  "hero":{"title_a":"我们帮助人们、组织和城市","title_b":"共同变得更强。","subtitle":"选择你想做什么。"},
+  "cards":{
+    "orgs":{"title":"组织","promise":"我们帮助您的组织保持强大。","cta":"告诉我怎么做"},
+    "biz":{"title":"企业","promise":"我们帮助您的企业成长。","cta":"告诉我怎么做"},
+    "connectors":{"title":"连接者","promise":"我们帮助人们找到机会。","cta":"告诉我怎么做"},
+    "cultures":{"title":"文化","promise":"体验世界。","cta":"探索"},
+    "communities":{"title":"社区","promise":"建设更强的社区。","cta":"加入我们"}
+  },
+  "ecosystem":{
+    "label":"整个生态系统 · 一目了然","title_a":"一切如何","title_b":"相互连接。",
+    "center_label":"中心","center_full":"可持续经济赋权与发展",
+    "sky":{"cultures":"文化庆典","cultures_desc":"参与 · 能见度 · 理解 · 旅游 · 文化交流","immigrants":"移民联盟","immigrants_desc":"社区 · 代表 · 倡导 · 团结"},
+    "ground":{"orgs":"组织","orgs_desc":"变得更强","connectors":"连接者","connectors_desc":"连接机会","providers":"提供者","providers_desc":"企业成长"},
+    "discover_link":"↪ 不确定您在哪里?在60秒内发现您的路径 →"
+  },
+  "phases":{
+    "available_label":"正等着你!","available_sub":"您可以立即受益。",
+    "activating_label":"随着您的参与而激活","activating_sub":"随着更多成员、商家、赞助者和合作伙伴参与而变得更强。",
+    "developing_label":"与您的组织一起成长","developing_sub":"与参与的组织、官员、商家和合作伙伴一起建设和扩展。"
+  },
+  "diagnostic":{
+    "label":"发现您的路径","title_a":"告诉我们您在哪里。","title_b":"我们将揭示您的路径。",
+    "intro":"不是测验。是一段旅程。告诉我们您的挑战。展示您的目标。帮助我们了解您的组织。然后我们将一起揭示您的路径、机会和下一步。",
+    "begin":"开始发现 →","footer":"大约60秒。不收集任何个人数据。纯粹的发现。"
+  },
+  "buttons":{"show_me_how":"告诉我怎么做","show_me_more":"告诉我更多","apply_for_consideration":"申请考虑","discover_more_n_of_m":"发现更多"},
+  "audience_promises":{"orgs":"让您的使命继续。保持强大。","biz":"接触新客户。","churches":"加强您的教会/清真寺/寺庙。","chambers":"为您的成员带来新价值。","entrep":"您城市中的新机会。","sponsors":"真正的影响。真正的社区。","cities":"激活您的城市。","passport":"环游世界。","cultures":"体验世界。","career":"帮助您的城市变得更强大。"},
+  "missions":{"dev_officer":"帮助一个组织变得更强。","success_liaison":"帮助十个组织维持增长。","city_coordinator":"激活一座整个城市。","state_coordinator":"跨五个城市激活一个州。","national_coordinator":"跨州和城市激活一个国家。","strategic_partner":"以使命影响参与整个生态系统。"}
+}

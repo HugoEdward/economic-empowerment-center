@@ -1,0 +1,43 @@
+{
+  "locale": "es",
+  "name": "Español",
+  "dir": "ltr",
+  "nav": { "home":"Inicio","organizations":"Organizaciones","businesses":"Negocios","connectors":"Conectores","cultures":"Culturas","communities":"Comunidades","about":"Acerca","apply":"Solicitar Consideración" },
+  "hero": { "title_a":"Ayudamos a las personas, organizaciones y ciudades", "title_b":"a crecer más fuertes — juntos.", "subtitle":"Elige lo que quieres hacer." },
+  "cards": {
+    "orgs":      { "title":"ORGANIZACIONES","promise":"Ayudamos a tu organización a mantenerse fuerte.","cta":"MUÉSTRAME CÓMO" },
+    "biz":       { "title":"NEGOCIOS",      "promise":"Ayudamos a tu negocio a crecer.",                "cta":"MUÉSTRAME CÓMO" },
+    "connectors":{ "title":"CONECTORES",    "promise":"Ayudamos a las personas a encontrar oportunidades.","cta":"MUÉSTRAME CÓMO" },
+    "cultures":  { "title":"CULTURAS",      "promise":"Experimenta el mundo.",                          "cta":"EXPLORAR" },
+    "communities":{"title":"COMUNIDADES",   "promise":"Construyendo comunidades más fuertes.",          "cta":"ÚNETE" }
+  },
+  "ecosystem": {
+    "label":"Todo el Ecosistema · De Un Vistazo",
+    "title_a":"Cómo todo",
+    "title_b":"se conecta.",
+    "center_label":"EL CENTRO",
+    "center_full":"Empoderamiento Económico Sostenible y Desarrollo",
+    "sky": { "cultures":"Celebración de Culturas","cultures_desc":"Participación · Visibilidad · Entendimiento · Turismo · Intercambio Cultural","immigrants":"Alianza de Inmigrantes","immigrants_desc":"Comunidad · Representación · Defensa · Unidad" },
+    "ground": { "orgs":"Organizaciones","orgs_desc":"se fortalecen","connectors":"Conectores","connectors_desc":"conectan oportunidades","providers":"Proveedores","providers_desc":"los negocios crecen" },
+    "discover_link":"↪ ¿No sabes dónde encajas? Descubre tu camino en 60 segundos →"
+  },
+  "phases": {
+    "available_label":"¡Esperándote!",
+    "available_sub":"Puedes beneficiarte inmediatamente.",
+    "activating_label":"Se Activa Con Tu Participación",
+    "activating_sub":"Más fuerte cuanto más miembros, comerciantes, patrocinadores y socios participen.",
+    "developing_label":"Creciendo Con Tu Organización",
+    "developing_sub":"Construido y expandido junto con las organizaciones, oficiales, comerciantes y socios participantes."
+  },
+  "diagnostic": {
+    "label":"Descubre Tu Camino",
+    "title_a":"Cuéntanos dónde estás.",
+    "title_b":"Te revelaremos tu camino.",
+    "intro":"No es un cuestionario. Es un viaje. Cuéntanos tu desafío. Muéstranos tu meta. Ayúdanos a entender tu organización. Luego te revelaremos tu camino, tus oportunidades y tus próximos pasos — juntos.",
+    "begin":"Comenzar el Descubrimiento →",
+    "footer":"Unos 60 segundos. No se recopilan datos personales. Puro descubrimiento."
+  },
+  "buttons": { "show_me_how":"Muéstrame Cómo","show_me_more":"Muéstrame Más","apply_for_consideration":"Solicitar Consideración","discover_more_n_of_m":"Descubre más" },
+  "audience_promises": { "orgs":"Mantén viva tu misión. Permanece fuerte.","biz":"Llega a nuevos clientes.","churches":"Fortalece tu iglesia.","chambers":"Nuevo valor para tus miembros.","entrep":"Nueva oportunidad en tu ciudad.","sponsors":"Impacto real. Comunidades reales.","cities":"Activa tu ciudad.","passport":"Viaja por el mundo.","cultures":"Experimenta el mundo.","career":"Ayuda a tu ciudad a crecer más fuerte." },
+  "missions": { "dev_officer":"Ayuda a que una organización se fortalezca.","success_liaison":"Ayuda a diez organizaciones a sostener su crecimiento.","city_coordinator":"Activa una ciudad entera.","state_coordinator":"Activa un estado en cinco ciudades.","national_coordinator":"Activa una nación a través de estados y ciudades.","strategic_partner":"Involucra ecosistemas enteros con impacto de misión." }
+}

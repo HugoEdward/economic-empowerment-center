@@ -1,0 +1,34 @@
+{
+  "locale":"pt","name":"Português","dir":"ltr",
+  "nav":{"home":"Início","organizations":"Organizações","businesses":"Negócios","connectors":"Conectores","cultures":"Culturas","communities":"Comunidades","about":"Sobre","apply":"Solicitar Consideração"},
+  "hero":{"title_a":"Ajudamos pessoas, organizações e cidades","title_b":"a crescerem mais fortes — juntas.","subtitle":"Escolha o que você quer fazer."},
+  "cards":{
+    "orgs":{"title":"ORGANIZAÇÕES","promise":"Ajudamos sua organização a permanecer forte.","cta":"MOSTRE-ME COMO"},
+    "biz":{"title":"NEGÓCIOS","promise":"Ajudamos seu negócio a crescer.","cta":"MOSTRE-ME COMO"},
+    "connectors":{"title":"CONECTORES","promise":"Ajudamos as pessoas a encontrar oportunidades.","cta":"MOSTRE-ME COMO"},
+    "cultures":{"title":"CULTURAS","promise":"Experimente o mundo.","cta":"EXPLORAR"},
+    "communities":{"title":"COMUNIDADES","promise":"Construindo comunidades mais fortes.","cta":"JUNTE-SE A NÓS"}
+  },
+  "ecosystem":{
+    "label":"O Ecossistema Inteiro · De Relance",
+    "title_a":"Como tudo",
+    "title_b":"se conecta.",
+    "center_label":"O CENTRO","center_full":"Empoderamento Econômico Sustentável e Desenvolvimento",
+    "sky":{"cultures":"Celebração das Culturas","cultures_desc":"Participação · Visibilidade · Compreensão · Turismo · Intercâmbio Cultural","immigrants":"Aliança dos Imigrantes","immigrants_desc":"Comunidade · Representação · Defesa · Unidade"},
+    "ground":{"orgs":"Organizações","orgs_desc":"ficam mais fortes","connectors":"Conectores","connectors_desc":"conectam oportunidades","providers":"Provedores","providers_desc":"negócios crescem"},
+    "discover_link":"↪ Não sabe onde se encaixa? Descubra seu caminho em 60 segundos →"
+  },
+  "phases":{
+    "available_label":"Esperando Por Você!","available_sub":"Você pode se beneficiar imediatamente.",
+    "activating_label":"Ativa Com Sua Participação","activating_sub":"Mais forte conforme membros, comerciantes, patrocinadores e parceiros participam.",
+    "developing_label":"Crescendo Com Sua Organização","developing_sub":"Construído e expandido junto com organizações participantes, oficiais, comerciantes e parceiros."
+  },
+  "diagnostic":{
+    "label":"Descubra Seu Caminho","title_a":"Mostre-nos onde você está.","title_b":"Revelaremos seu caminho.",
+    "intro":"Não é um questionário. É uma jornada. Conte-nos seu desafio. Mostre-nos sua meta. Ajude-nos a entender sua organização. Então revelaremos seu caminho, suas oportunidades e seus próximos passos — juntos.",
+    "begin":"Iniciar Descoberta →","footer":"Cerca de 60 segundos. Nenhum dado pessoal coletado. Pura descoberta."
+  },
+  "buttons":{"show_me_how":"Mostre-me Como","show_me_more":"Mostre-me Mais","apply_for_consideration":"Solicitar Consideração","discover_more_n_of_m":"Descubra mais"},
+  "audience_promises":{"orgs":"Mantenha sua missão viva. Permaneça forte.","biz":"Alcance novos clientes.","churches":"Fortaleça sua igreja.","chambers":"Novo valor para seus membros.","entrep":"Nova oportunidade em sua cidade.","sponsors":"Impacto real. Comunidades reais.","cities":"Ative sua cidade.","passport":"Viaje pelo mundo.","cultures":"Experimente o mundo.","career":"Ajude sua cidade a crescer mais forte."},
+  "missions":{"dev_officer":"Ajude uma organização a ficar mais forte.","success_liaison":"Ajude dez organizações a sustentar seu crescimento.","city_coordinator":"Ative uma cidade inteira.","state_coordinator":"Ative um estado em cinco cidades.","national_coordinator":"Ative uma nação em estados e cidades.","strategic_partner":"Engaje ecossistemas inteiros com impacto de missão."}
+}

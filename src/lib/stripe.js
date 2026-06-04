@@ -1,84 +1,90 @@
 /**
- * Stripe Connect Integration — Client-Side Helpers
+ * Stripe Connect Integration — Client-Side Helpers (v5.1)
  *
- * IMPORTANT: This file contains CLIENT-SIDE helpers only.
- * Actual Stripe account creation MUST happen server-side
- * (via Vercel Serverless Function, Supabase Edge Function,
- * or separate Node.js endpoint) because STRIPE_SECRET_KEY
- * must NEVER be exposed in the browser.
+ * v5.1: Wired to Supabase Edge Functions for actual operational use.
  *
- * Static export limitation:
- * Next.js static export cannot run server functions.
- * Deploy these endpoints separately:
+ * Server-side logic lives in /supabase/functions/:
+ *   - stripe-create-account
+ *   - stripe-refresh-link
+ *   - stripe-webhook
  *
- *   POST /api/stripe/create-account
- *     - Receives application_id
- *     - Creates Stripe Express account
- *     - Returns account_id and onboarding URL
+ * Deployment (run from operator's machine, requires Supabase CLI):
  *
- *   POST /api/stripe/refresh-onboarding-link
- *     - Receives application_id
- *     - Generates fresh Account Link
- *     - Returns onboarding URL
+ *   supabase functions deploy stripe-create-account --no-verify-jwt
+ *   supabase functions deploy stripe-refresh-link --no-verify-jwt
+ *   supabase functions deploy stripe-webhook --no-verify-jwt
  *
- *   POST /api/stripe/webhook
- *     - Validates signature with STRIPE_WEBHOOK_SECRET
- *     - Handles account.updated, capability.updated, person.updated
- *     - Updates applications table and stripe_webhook_events
+ * Required environment variables on Edge Functions side
+ * (set in Supabase Dashboard → Project Settings → Edge Functions):
+ *   STRIPE_SECRET_KEY        — sk_test_... or sk_live_...
+ *   STRIPE_WEBHOOK_SECRET    — whsec_... from Stripe Dashboard webhook config
+ *   PUBLIC_SITE_URL          — https://economicempowerment.center
+ *
+ * Required env vars in this Next.js app (set in .env.local + Netlify):
+ *   NEXT_PUBLIC_SUPABASE_FUNCTIONS_URL — e.g. https://<project>.supabase.co/functions/v1
+ *   NEXT_PUBLIC_SUPABASE_ANON_KEY      — public anon key (required for invoking functions)
+ *
+ * STRIPE_SECRET_KEY is NEVER imported here. It is exclusively used inside Edge Functions.
  */
 
 import { getSupabase } from './supabase';
 
-const STRIPE_API_BASE = process.env.NEXT_PUBLIC_STRIPE_API_BASE || '/api/stripe';
+const FUNCTIONS_URL = process.env.NEXT_PUBLIC_SUPABASE_FUNCTIONS_URL || '';
+const ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
 
-/**
- * Admin action: Initiate Stripe Connect onboarding for an approved application.
- * Calls backend endpoint (not implemented in static export — see file header).
- */
-export async function initiateStripeOnboarding(applicationId) {
+function isConfigured() {
+  return Boolean(FUNCTIONS_URL && ANON_KEY);
+}
+
+async function callEdgeFunction(name, payload) {
+  if (!isConfigured()) {
+    return {
+      error: 'Stripe Edge Functions not yet configured. Deploy via `supabase functions deploy` and set NEXT_PUBLIC_SUPABASE_FUNCTIONS_URL.',
+    };
+  }
   try {
-    const response = await fetch(`${STRIPE_API_BASE}/create-account`, {
+    const res = await fetch(`${FUNCTIONS_URL}/${name}`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ application_id: applicationId }),
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${ANON_KEY}`,
+      },
+      body: JSON.stringify(payload),
     });
-
-    if (!response.ok) {
-      return { error: 'Stripe endpoint not deployed. See lib/stripe.js for deployment requirements.' };
-    }
-
-    const data = await response.json();
-    return { success: true, accountId: data.account_id, onboardingUrl: data.onboarding_url };
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) return { error: data?.error || `Edge function returned ${res.status}` };
+    return { success: true, ...data };
   } catch (err) {
-    return { error: 'Stripe integration requires server-side endpoint deployment.' };
+    return { error: err?.message || 'Network error reaching Edge Function' };
   }
 }
 
 /**
- * Refresh expired onboarding link.
+ * Initiate Stripe Connect Express onboarding for an approved application.
+ * Returns the Account Link URL — open in same tab for the applicant to complete onboarding.
+ */
+export async function initiateStripeOnboarding(applicationId, { email, country = 'US', businessType = 'individual' } = {}) {
+  return callEdgeFunction('stripe-create-account', {
+    applicationId,
+    email,
+    country,
+    businessType,
+  });
+}
+
+/**
+ * Regenerate an expired onboarding link.
  */
 export async function refreshOnboardingLink(applicationId) {
-  try {
-    const response = await fetch(`${STRIPE_API_BASE}/refresh-onboarding-link`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ application_id: applicationId }),
-    });
-
-    if (!response.ok) return { error: 'Stripe endpoint not deployed.' };
-    const data = await response.json();
-    return { success: true, onboardingUrl: data.onboarding_url };
-  } catch (err) {
-    return { error: 'Stripe integration requires server-side endpoint deployment.' };
-  }
+  return callEdgeFunction('stripe-refresh-link', { applicationId });
 }
 
 /**
- * Read current Stripe status from database (synced from webhooks).
+ * Read current Stripe sync status from the database (kept fresh by webhooks).
  */
 export async function getStripeStatus(applicationId) {
   const client = getSupabase();
-  if (!client) return { error: 'Not configured' };
+  if (!client) return { error: 'Supabase not configured' };
 
   const { data, error } = await client
     .from('applications')
@@ -103,56 +109,20 @@ export async function getStripeStatus(applicationId) {
 }
 
 /**
- * Webhook architecture documentation.
+ * Server-side tax ID encryption is exposed as a Supabase RPC.
+ * Migration `008_tax_id_encryption.sql` provides:
+ *   encrypt_tax_id(plaintext text) returns bytea
+ *   decrypt_tax_id(ciphertext bytea) returns text  (admin-only)
  *
- * Deploy as a server endpoint (Vercel/Supabase Edge/Node):
- *
- * ```js
- * import Stripe from 'stripe';
- * import { buffer } from 'micro';
- *
- * const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
- *
- * export default async function handler(req, res) {
- *   const sig = req.headers['stripe-signature'];
- *   const body = await buffer(req);
- *
- *   let event;
- *   try {
- *     event = stripe.webhooks.constructEvent(body, sig, process.env.STRIPE_WEBHOOK_SECRET);
- *   } catch (err) {
- *     return res.status(400).send(`Webhook signature failed: ${err.message}`);
- *   }
- *
- *   // Store raw event for audit
- *   await supabase.from('stripe_webhook_events').insert({
- *     stripe_event_id: event.id,
- *     event_type: event.type,
- *     stripe_account_id: event.account || event.data?.object?.id,
- *     payload: event,
- *   });
- *
- *   // Handle relevant events
- *   if (event.type === 'account.updated') {
- *     const account = event.data.object;
- *     await supabase.from('applications').update({
- *       stripe_charges_enabled: account.charges_enabled,
- *       stripe_payouts_enabled: account.payouts_enabled,
- *       stripe_details_submitted: account.details_submitted,
- *       stripe_requirements_currently_due: account.requirements?.currently_due,
- *       stripe_requirements_eventually_due: account.requirements?.eventually_due,
- *       stripe_onboarding_status: determineStatus(account),
- *       stripe_last_sync_at: new Date().toISOString(),
- *     }).eq('stripe_account_id', account.id);
- *   }
- *
- *   return res.status(200).json({ received: true });
- * }
- * ```
- *
- * Required environment variables:
- *   STRIPE_SECRET_KEY (server-only, never expose to browser)
- *   STRIPE_WEBHOOK_SECRET (for signature validation)
- *   NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY (safe for browser)
- *   NEXT_PUBLIC_SITE_URL (for return_url / refresh_url)
+ * Always call from a Supabase session (RLS protects the encryption key).
  */
+export async function encryptTaxId(plaintext) {
+  const client = getSupabase();
+  if (!client) return { error: 'Supabase not configured' };
+  if (!plaintext) return { error: 'Tax ID required' };
+  const { data, error } = await client.rpc('encrypt_tax_id', { plaintext });
+  if (error) return { error: error.message };
+  return { ciphertext: data };
+}
+
+export { isConfigured as isStripeConfigured };
